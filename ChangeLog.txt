@@ -1,0 +1,46 @@
+Current Version 3.0.0
+
+
+Changes since 1.3.2
+
+* Port to Python 3 and GTK 3
+
+
+Changes since 1.3.1
+* Version number needs to be a string if it has multiple decimal places -
+thanks Sebastian Pająk
+
+Changes since 1.3
+
+* [ 1807003 ] Error when saving
+* [ 1726426 ] "evaluate" doenst recognise "^" power sign
+* [ 1829857 ] Two start entries for lybniz - thanks Mario Bonino
+
+Changes since 1.2
+
+* Translatable
+* fac(), and sinc() functions added. ^ can be used for powers.
+* Improve documentation
+* Bug fixes
+
+Changes since 1.1
+
+* Coloured plotting
+* Auto Scaling
+* Scale labelling
+* Fix rounding error bugs in drawing code
+
+Changes since 1.0
+
+* Moved to sourceforge
+* Optimise drawing code (typically ~50% reduction in drawing time)
+	This was by compiling the function outside of the drawing loop
+	There are additional savings when only plotting 1 or 2 functions
+* Safer evaluation of expressions
+	The eval statement now runs with a restricted namespace. This prevents
+	a user being able to call other functions within the program.
+* Using "math." before a function name (eg math.sin(x)) is optional 
+* Preserve center when zooming
+* Setup.py install script
+* Pressing enter in input boxes refreshes plot
+* Make division always use floats (unless you use the // operator)

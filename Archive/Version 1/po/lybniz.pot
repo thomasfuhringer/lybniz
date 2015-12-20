@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-17 20:35+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../lybniz.py:389
+msgid "_File"
+msgstr ""
+
+#: ../lybniz.py:392
+msgid "_Save"
+msgstr ""
+
+#: ../lybniz.py:392
+msgid "Save graph as bitmap"
+msgstr ""
+
+#: ../lybniz.py:399
+msgid "_Quit"
+msgstr ""
+
+#: ../lybniz.py:399
+msgid "Quit Application"
+msgstr ""
+
+#: ../lybniz.py:407
+msgid "_Graph"
+msgstr ""
+
+#: ../lybniz.py:410
+msgid "P_lot"
+msgstr ""
+
+#: ../lybniz.py:410
+msgid "Plot Functions"
+msgstr ""
+
+#: ../lybniz.py:417
+msgid "_Evaluate"
+msgstr ""
+
+#: ../lybniz.py:417
+msgid "Evaluate Functions"
+msgstr ""
+
+#: ../lybniz.py:424
+msgid "Zoom _In"
+msgstr ""
+
+#: ../lybniz.py:424
+msgid "Zoom In"
+msgstr ""
+
+#: ../lybniz.py:431
+msgid "Zoom _Out"
+msgstr ""
+
+#: ../lybniz.py:431
+msgid "Zoom Out"
+msgstr ""
+
+#: ../lybniz.py:438
+msgid "Zoom _Reset"
+msgstr ""
+
+#: ../lybniz.py:438
+msgid "Zoom Reset"
+msgstr ""
+
+#: ../lybniz.py:445
+msgid "_Connect Points"
+msgstr ""
+
+#: ../lybniz.py:451
+msgid "Scale Style"
+msgstr ""
+
+#: ../lybniz.py:455
+msgid "Decimal"
+msgstr ""
+
+#: ../lybniz.py:455
+msgid "Set style to decimal"
+msgstr ""
+
+#: ../lybniz.py:461
+msgid "Radians"
+msgstr ""
+
+#: ../lybniz.py:461
+msgid "Set style to radians"
+msgstr ""
+
+#: ../lybniz.py:467
+msgid "Custom"
+msgstr ""
+
+#: ../lybniz.py:467
+msgid "Set style to custom"
+msgstr ""
+
+#: ../lybniz.py:474
+msgid "_Help"
+msgstr ""
+
+#: ../lybniz.py:477
+msgid "_Contents"
+msgstr ""
+
+#: ../lybniz.py:477
+msgid "Help Contents"
+msgstr ""
+
+#: ../lybniz.py:484
+msgid "_About"
+msgstr ""
+
+#: ../lybniz.py:484
+msgid "About Box"
+msgstr ""
+
+#: ../lybniz.py:550
+msgid "Evaluate"
+msgstr ""
+
+#: ../lybniz.py:664
+msgid "Save as..."
+msgstr ""
+
+#: ../lybniz.py:691
+msgid "Can't Show help"
+msgstr ""
+
+#: ../lybniz.py:700
+msgid "Function graph Plotter"
+msgstr ""
+
+#: ../lybniz.py:758
+msgid "X min"
+msgstr ""
+
+#: ../lybniz.py:762
+msgid "Y min"
+msgstr ""
+
+#: ../lybniz.py:771
+msgid "X max"
+msgstr ""
+
+#: ../lybniz.py:775
+msgid "Y max"
+msgstr ""
+
+#: ../lybniz.py:786
+msgid "X scale"
+msgstr ""
+
+#: ../lybniz.py:792
+msgid "Y scale"
+msgstr ""

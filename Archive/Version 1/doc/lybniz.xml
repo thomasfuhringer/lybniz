@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?> <!-- -*- xml -*- -->
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+	"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+	<!ENTITY date "2005-10-11">
+	<!ENTITY app "<application>Lybniz</application>">
+]>
+<article id="index" lang="en">
+<articleinfo> 
+	<title>&app; User Manual</title>
+	
+	<authorgroup>
+		<author>
+			<firstname>Thomas</firstname>
+			<surname>Führinger</surname>
+		</author>
+		<author>
+			<firstname>Sam</firstname>
+			<surname>Tygier</surname>
+		</author>		
+	</authorgroup>
+
+	<copyright>
+	<year>2005</year>
+		<holder>Thomas Führinger</holder>
+		<holder>Sam Tygier</holder>
+	</copyright>
+	<revhistory>
+		<revision>
+			<date>2006-09-12</date> 
+			<revdescription> 
+				<para role="author">Sam Tygier</para>
+			</revdescription> 
+		</revision>
+		<revision>
+			<date>2005-10-11</date> 
+			<revdescription> 
+				<para role="author">Thomas Führinger</para>
+			</revdescription> 
+		</revision>
+	</revhistory>
+</articleinfo> 
+
+<indexterm zone="index"> 
+	<primary>Lybniz</primary>
+</indexterm>
+
+<para><application>&app;</application> is a simple mathematical function graph plotter.</para>
+
+<sect1 id="lybniz-using"> 
+<title>Using &app;</title> 
+<para>Enter functions in Python syntax with <code>x</code> as the dependent variable. Press the <guibutton>Plot</guibutton> button to see the graph.
+</para>
+
+<figure id="mainwindow-fig">
+        <title>&app; Window</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject><imagedata
+                fileref="figures/lybniz_colour_graph_small.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Shows &app; main window displaying 3 graphs.</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+
+<para>
+Constants and functions of the <code>math</code> module are available.
+</para>
+<para>Examples:</para>
+<screen><userinput>x**3 - 2 * x
+2 * cos(x)
+e ** (x / -5) * sin(x)
+</userinput></screen>
+<para><guilabel>xMin</guilabel>, <guilabel>xMax</guilabel>, <guilabel>yMin</guilabel>, <guilabel>yMax</guilabel> define the boundaries of the range on the abszissa and ordinate to be displayed.</para>
+
+<para>To zoom in, activate the <guibutton>Zoom In</guibutton> tool button. It divides the range boundaries by half. <guibutton>Zoom out</guibutton> does the opposite. To closer inspect a specific section, drag the mouse cursor over an area. After release of the button the area thus marked will be displayed.</para>
+
+<para>The scale automatically adjusts as you zoom in and out. To switch between decimal and radian styles, use <menuchoice><guimenu>Graph</guimenu><guimenuitem>Scale Style</guimenuitem><guimenuitem>Decimal</guimenuitem></menuchoice> or <menuchoice><guimenu>Graph</guimenu><guimenuitem>Scale Style</guimenuitem><guimenuitem>Radians</guimenuitem></menuchoice></para>.
+
+<para>If you wish to use a custom scale select <menuchoice><guimenu>Graph</guimenu><guimenuitem>Scale Style</guimenuitem><guimenuitem>Custom</guimenuitem></menuchoice>. You can then use the
+
+<guilabel>xScale</guilabel>, <guilabel>yScale</guilabel> entries to input the intervals at which marks are displayed on the respective axis.<sbr />
+They can also be stated as expressions. Examples:</para>
+<screen><userinput>xMin = pi * -2
+xMax = pi * 2
+xScale = pi / 2
+</userinput></screen>
+
+
+<para>To save the graph in PNG format choose <menuchoice><guimenu>File</guimenu><guimenuitem>Save</guimenuitem></menuchoice>.</para>
+<para>Using <menuchoice><guimenu>Graph</guimenu><guimenuitem>Evaluate</guimenuitem></menuchoice> you get a dialog box that allows input of an <code>x</code> value and calculates <code>y</code> values.</para>
+</sect1>
+<sect1 id="lybniz-accelerator-keys"> 
+<title>Accelerator Keys</title> 
+<table frame='all'>
+	<tgroup cols='2' align='left' colsep='0' rowsep='0'>
+		<colspec/>
+		<colspec/>
+		<thead>
+			<row>
+				<entry>Accelerator</entry>
+				<entry>Function</entry>
+			</row>
+		</thead>
+		<tbody>
+			<row>
+				<entry><keycombo><keycap>Ctrl</keycap><keycap>L</keycap></keycombo></entry>
+				<entry>Plot graph</entry>
+			</row>
+			<row>
+				<entry><keycombo><keycap>Ctrl</keycap><keycap>+</keycap></keycombo></entry>
+				<entry>Zoom in</entry>
+			</row>
+			<row>
+				<entry><keycombo><keycap>Ctrl</keycap><keycap>-</keycap></keycombo></entry>
+				<entry>Zoom out</entry>
+			</row>
+			<row>
+				<entry><keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo></entry>
+				<entry>Reset zoom</entry>
+			</row>
+			<row>
+				<entry><keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo></entry>
+				<entry>Save graph</entry>
+			</row>
+			<row>
+				<entry><keycombo><keycap>Ctrl</keycap><keycap>E</keycap></keycombo></entry>
+				<entry>Evaluate functions</entry>
+			</row>
+			<row>
+				<entry><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo></entry>
+				<entry>Quit <application>&app;</application></entry>
+			</row>
+		</tbody>
+	</tgroup>
+</table>
+</sect1>
+
+<sect1 id="lybniz-math-functions"> 
+<title>Operators and Functions</title>
+
+<para>Expressions are entered in python syntax. The following operators can be used. Note: multiplication is not implied (use "2*x" not "2x")</para>
+
+<table frame='all'>
+	<tgroup cols='2' align='left' colsep='0' rowsep='0'>
+		<colspec/>
+		<colspec/>
+		<thead>
+			<row>
+				<entry>Operator</entry>
+				<entry>Description</entry>
+			</row>
+		</thead>
+		<tbody>
+			<row>
+				<entry>+,-,*,/</entry>
+				<entry>Plus, minus, multiply, divide</entry>
+			</row>
+			<row>
+				<entry>//</entry>
+				<entry>Integer divide. (eg 3/2 = 1)</entry>
+			</row>
+			<row>
+				<entry>**, ^</entry>
+				<entry>Raise to the power of</entry>
+			</row>			
+			<row>
+				<entry>%</entry>
+				<entry>Remainder</entry>
+			</row>			
+			
+		</tbody>
+	</tgroup>
+</table>
+
+
+
+<para>Lybniz has all the math functions of the python standard library available.</para>
+
+<table>
+<tgroup cols="2">
+<tbody>
+<row>
+<entry>
+<itemizedlist>
+<listitem><para>acos()</para></listitem>
+<listitem><para>asin()</para></listitem>
+<listitem><para>atan()</para></listitem>
+<listitem><para>atan2()</para></listitem>
+<listitem><para>ceil()</para></listitem>
+<listitem><para>cos()</para></listitem>
+<listitem><para>cosh()</para></listitem>
+<listitem><para>degrees()</para></listitem>
+<listitem><para>exp()</para></listitem>
+<listitem><para>fabs()</para></listitem>
+<listitem><para>floor()</para></listitem>
+<listitem><para>fmod()</para></listitem>
+<listitem><para>frexp()</para></listitem>
+</itemizedlist>
+</entry>
+<entry>
+<itemizedlist>
+<listitem><para>hypot()</para></listitem>
+<listitem><para>ldexp()</para></listitem>
+<listitem><para>log()</para></listitem>
+<listitem><para>log10()</para></listitem>
+<listitem><para>modf()</para></listitem>
+<listitem><para>pow()</para></listitem>
+<listitem><para>radians()</para></listitem>
+<listitem><para>sin()</para></listitem>
+<listitem><para>sinh()</para></listitem>
+<listitem><para>sqrt()</para></listitem>
+<listitem><para>tan()</para></listitem>
+<listitem><para>tanh()</para></listitem>
+</itemizedlist>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para>These are documented at <ulink url="http://docs.python.org/lib/module-math.html" type="http">Python Library Reference - Math</ulink>.</para>
+
+<para>There are also a few extra functions that may be useful.</para>
+
+<table frame='all'>
+	<tgroup cols='2' align='left' colsep='0' rowsep='0'>
+		<colspec/>
+		<colspec/>
+		<thead>
+			<row>
+				<entry>Function</entry>
+				<entry>Description</entry>
+			</row>
+		</thead>
+		<tbody>
+			<row>
+				<entry>fac(x)</entry>
+				<entry>Factorial of x (or x!). Note: only works with positive integers.</entry>
+			</row>
+			<row>
+				<entry>sinc(x)</entry>
+				<entry>sin(x)/x.</entry>
+			</row>
+		</tbody>
+	</tgroup>
+</table>
+
+<para>The constants pi and e can be used.</para>
+
+</sect1>
+
+<sect1 id="gemello-about"> 
+	<title>About &app;</title> 
+	<para><application>&app;</application> was originally written by Thomas Führinger
+      (<email>ThomasFuhringer@Yahoo.com</email>). It is now maintained by Sam Tygier 
+      (<email>samtygier@yahoo.co.uk</email>).
+      
+      To find more information about
+      <application>&app;</application>, please visit the 
+      <ulink url="github.com/thomasfuhringer/lybniz" type="http">&app; Web
+	page</ulink>. </para>
+
+    <para>This program is distributed under the revised BSD license.</para>
+</sect1>
+</article>

@@ -1,0 +1,17 @@
+Lybniz
+
+Lybniz is an easy to use mathematical function graph plotter using pyGTK.
+
+The main place to get information about Lybniz is https://github.com/thomasfuhringer/lybniz
+
+Requirements
+
+Python >= 2.4
+PyGTK  >= 2.6
+
+Running Lybniz
+
+Lybniz can be started with the command
+./lybniz.py
+in the directory you downloaded it to.
+
