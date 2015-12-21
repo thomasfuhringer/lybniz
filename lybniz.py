@@ -8,12 +8,10 @@
 	Version 3.0.0
 	Requires PyGObject 3
 	Released under the terms of the revised BSD license
-	Modified: 2015-12-20
+	Modified: 2015-12-21
 """
 
-import sys
-import cairo
-import gettext
+import sys, os, cairo, gettext, configparser
 from math import *
 from gi.repository import Gtk, Gdk, GObject, Pango, Gio
 
@@ -30,6 +28,8 @@ app_win = None
 actions = Gtk.ActionGroup("General")
 graph = None
 connect_points = True
+configFile = os.path.expanduser('~/.lybniz.cfg')
+config = configparser.ConfigParser()
 
 x_res = 1
 
@@ -172,14 +172,6 @@ class GraphClass:
 				cr = cairo.Context(self.surface)
 				cr.set_source_surface(self.clean_surface, 0, 0)
 				cr.paint()
-				#cr.set_source_rgb(1, 1, 1)
-				#cr.set_operator(cairo.OPERATOR_XOR);
-
-				#if self.selection[1][0] is not None:
-				#	x0 = min(self.selection[1][0], self.selection[0][0])
-				#	y0 = min(self.selection[1][1], self.selection[0][1])
-				#	w = abs(self.selection[1][0] - self.selection[0][0])
-				#	h = abs(self.selection[1][1] - self.selection[0][1])
 
 				x0 = min(self.selection[0][0], int(x))
 				y0 = min(self.selection[0][1], int(y))
@@ -704,6 +696,15 @@ def set_statusbar(text):
 	app_win.status_bar.push(0, text)
 
 def quit_dlg(widget, event=None):
+	global config
+	width, height = app_win.get_size()
+	config["MainWindow"]["width"] = str(width)
+	config["MainWindow"]["height"] = str(height)
+	x, y = app_win.get_position()
+	config["MainWindow"]["x"] = str(x)
+	config["MainWindow"]["y"] = str(y)
+	with open(configFile, "w") as file:
+		config.write(file)
 	Gtk.main_quit()
 
 
@@ -865,16 +866,26 @@ class LybnizApp(Gtk.Application):
         self.connect("activate", self.on_activate)
 
     def on_activate(self, data=None):
-        global app_win, graph
+        global app_win, graph, config
 
         app_win = Gtk.Window(Gtk.WindowType.TOPLEVEL)
         app_win.set_title("Lybniz")
-        app_win.set_default_size(800, 600)
         app_win.connect("delete-event", quit_dlg)
         try:
             app_win.set_icon_from_file(icon_file)
         except:
             print ("Icon not found at", icon_file)
+
+        if config.read([configFile, ]) == []:
+            config.add_section("MainWindow")
+
+        app_win.set_default_size(800, 600)
+        if config.has_option("MainWindow", "width"):
+            app_win.resize(config.getint("MainWindow", "width"), config.getint("MainWindow", "height"))
+        if config.has_option("MainWindow", "x"):
+            app_win.move(config.getint("MainWindow", "x"), config.getint("MainWindow", "y"))
+        else:
+            app_win.set_position(Gtk.WindowPosition.CENTER)
 
         app_win.accel_group = Gtk.AccelGroup()
         app_win.add_accel_group(app_win.accel_group)

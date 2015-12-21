@@ -9,13 +9,12 @@
 	Version 1.3.3
 	Requires PyGtk 2.6	
 	Released under the terms of the revised BSD license
-	Modified: 2015-12-20
+	Modified: 2015-12-21
 """
 
 from __future__ import division
-import gtk, pango
-import sys
-import math
+import sys, os, gtk, pango, ConfigParser
+#import math
 from math import *
 
 app_version = "1.3.3"
@@ -40,6 +39,8 @@ app_win = None
 actions = gtk.ActionGroup("General")
 graph = None
 connect_points = True
+configFile = os.path.expanduser('~/.lybniz.cfg')
+config = ConfigParser.ConfigParser()
 
 x_res = 1
 
@@ -679,6 +680,14 @@ def save(widget, event=None):
 
 
 def quit_dlg(widget, event=None):
+    width, height = app_win.get_size()
+    config.set("MainWindow", "width", width)
+    config.set("MainWindow", "height", height)
+    x, y = app_win.get_position()
+    config.set("MainWindow", "x", x)
+    config.set("MainWindow", "y", y)
+    with open(configFile, "wb") as file:
+        config.write(file)
 	gtk.main_quit()
 
 
@@ -839,39 +848,51 @@ def set_statusbar(text):
 
 
 def main():
-	global app_win, graph
-	
+	global app_win, graph, configFile, config
+
 	app_win = gtk.Window(gtk.WINDOW_TOPLEVEL)
 	app_win.set_title("Lybniz")
-	app_win.set_default_size(800, 600)
 	app_win.connect("delete-event", quit_dlg)
 	try:
 		app_win.set_icon_from_file(icon_file)
 	except:
-		print "icon not found at", icon_file
-	
+		print "Icon not found at", icon_file
+		
+	#configFile = os.path.expanduser('~/.lybniz.cfg')
+	#config = ConfigParser.ConfigParser()
+	if config.read([configFile, ]) == []:
+		config.add_section("MainWindow")
+		
+	app_win.set_default_size(800, 600)
+	if config.has_option("MainWindow", "width"):
+		app_win.resize(config.getint("MainWindow", "width"), config.getint("MainWindow", "height"))
+	if config.has_option("MainWindow", "x"):
+		app_win.move(config.getint("MainWindow", "x"), config.getint("MainWindow", "y"))
+	else:
+		app_win.set_position(gtk.WIN_POS_CENTER)
+
 	app_win.accel_group = gtk.AccelGroup()
 	app_win.add_accel_group(app_win.accel_group)
 
 	app_win.v_box = gtk.VBox(False, 1)
 	app_win.v_box.set_border_width(1)
 	app_win.add(app_win.v_box)
-	
+
 	app_win.status_bar = gtk.Statusbar()
 
 	menu_toolbar_create()
 	app_win.v_box.pack_start(app_win.menu_main, False, True, 0)
-	
+
 	handle_box = gtk.HandleBox()
 	handle_box.add(app_win.tool_bar)
 	app_win.v_box.pack_start(handle_box, False, True, 0)
-	
+
 	app_win.v_box.pack_start(parameter_entries_create(), False, True, 4)
-	
+
 	graph = GraphClass()
 	app_win.v_box.pack_start(graph.drawing_area, True, True, 0)
 	app_win.v_box.pack_start(app_win.status_bar, False, True, 0)	
-		
+	
 	app_win.show_all()
 	app_win.scale_box.hide()
 
