@@ -82,6 +82,8 @@ safe_dict = sub_dict(locals(), safe_list)
 
 #add any needed builtins back in.
 safe_dict['abs'] = abs
+safe_dict['min'] = min
+safe_dict['max'] = max
 
 def marks(min_val,max_val,minor=1):
 	"yield positions of scale marks between min and max. For making minor marks, set minor to the number of minors you want between majors"
@@ -139,6 +141,8 @@ class GraphClass:
 			self.y_max = eval(y_max,{"__builtins__":{}},safe_dict)
 			self.y_min = eval(y_min,{"__builtins__":{}},safe_dict)
 			self.y_scale = eval(y_scale,{"__builtins__":{}},safe_dict)
+			self.previousMouseX = 0
+			self.previousMouseY = 0
 			self.plot()
 			return True
 
@@ -194,6 +198,24 @@ class GraphClass:
 				self.pix_map.draw_rectangle(gc, False, x0, y0, w, h)
 				self.selection[1][0], self.selection[1][1] = int(x), int(y)
 				self.draw_drawable()
+			elif state & gtk.gdk.BUTTON2_MASK:
+				dx = event.x - self.previousMouseX
+				dy = event.y - self.previousMouseY
+				dx = dx / self.canvas_width * (self.x_max - self.x_min)
+				dy = dy / self.canvas_height * (self.y_max - self.y_min)
+				self.x_min -= dx; self.x_max -= dx
+				self.y_min += dy; self.y_max += dy
+				parameter_entries_repopulate()
+				graph.plot()
+
+			self.previousMouseX = event.x
+			self.previousMouseY = event.y
+
+		def scroll_event(widget, event):
+			if event.direction == gtk.gdk.SCROLL_UP:
+				zoom_in(None)
+			elif event.direction == gtk.gdk.SCROLL_DOWN:
+				zoom_out(None)
 				
 		self.prev_y = [None, None, None]
 		
@@ -206,6 +228,7 @@ class GraphClass:
 		self.drawing_area.connect("button_press_event", button_press_event)
 		self.drawing_area.connect("button_release_event", button_release_event)
 		self.drawing_area.connect("motion_notify_event", motion_notify_event)
+		self.drawing_area.connect("scroll_event", scroll_event)
 		self.drawing_area.set_events(gtk.gdk.EXPOSURE_MASK | gtk.gdk.LEAVE_NOTIFY_MASK | gtk.gdk.BUTTON_PRESS_MASK | gtk.gdk.BUTTON_RELEASE_MASK | gtk.gdk.POINTER_MOTION_MASK |gtk.gdk.POINTER_MOTION_HINT_MASK)
 		self.scale_style = "dec"
 		
@@ -339,7 +362,7 @@ class GraphClass:
 				for e in plots:
 					safe_dict['x']=x
 					try:
-						y = eval(e[0],{"__builtins__":{"max": max, "min": min}},safe_dict)
+						y = eval(e[0],{"__builtins__":{}},safe_dict)
 						y_c = int(round(self.canvas_y(y)))
 						
 						if y_c < 0 or y_c > self.canvas_height:
