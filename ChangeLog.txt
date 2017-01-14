@@ -1,5 +1,8 @@
-Current Version 3.0.0
+Current Version 3.0.1
 
+Changes since 3.0.0
+
+* Fix bug regarding resizing, icon loading, etc.
 
 Changes since 1.3.2
 
