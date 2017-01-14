@@ -3,19 +3,20 @@
 
 """
 	Simple Function Graph Plotter
-	© Thomas Führinger, Sam Tygier 2005-2015
+	© Thomas Führinger, Sam Tygier 2005-2017
 	http://github.com/thomasfuhringer/lybniz
-	Version 3.0.0
+	Version 3.0.1
 	Requires PyGObject 3
 	Released under the terms of the revised BSD license
-	Modified: 2015-12-21
+	Modified: 2017-01-13
 """
-
 import sys, os, cairo, gettext, configparser
 from math import *
-from gi.repository import Gtk, Gdk, GObject, Pango, Gio
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gdk, GObject, Pango, Gio, GdkPixbuf
 
-app_version = "3.0.0"
+app_version = "3.0.1"
 
 gettext.install('lybniz')
 
@@ -45,7 +46,8 @@ y1 = "sin(x)"
 y2 = ""
 y3 = ""
 
-icon_file = "/usr/share/pixmaps/lybniz.png"
+#icon_file = "/usr/share/pixmaps/lybniz.png"
+icon_file = "images/lybniz.png"
 
 # some extra maths functions
 def fac(x):
@@ -111,6 +113,20 @@ def marks(min_val,max_val,minor=1):
 class GraphClass:
 	def __init__(self):
 		def da_configure_event(widget, event):
+			global x_max, x_min, x_scale, y_max, y_min, y_scale, y1, y2, y3
+
+			x_max = app_win.x_max_entry.get_text()
+			x_min = app_win.x_min_entry.get_text()
+			x_scale = app_win.x_scale_entry.get_text()
+
+			y_max = app_win.y_max_entry.get_text()
+			y_min = app_win.y_min_entry.get_text()
+			y_scale = app_win.y_scale_entry.get_text()
+
+			y1 = app_win.y1_entry.get_text()
+			y2 = app_win.y2_entry.get_text()
+			y3 = app_win.y3_entry.get_text()
+
 			gdkWindow = widget.get_window()
 			width = widget.get_allocated_width()
 			height = widget.get_allocated_height()
@@ -228,13 +244,13 @@ class GraphClass:
 		cr.set_source_rgb(1, 1, 1)
 		cr.paint()
 		cr.set_source_rgb(0, 0, 0)
-		cr.set_line_width (0.4)
+		cr.set_line_width (0.2)
 
 		if (self.scale_style == "cust"):
 
 			#draw cross
-			cr.rectangle(self.canvas_x(0), 0, 0.3, self.canvas_height)
-			cr.rectangle(0, self.canvas_y(0), self.canvas_width, 0.3)
+			cr.rectangle(self.canvas_x(0), 0, 0.2, self.canvas_height)
+			cr.rectangle(0, self.canvas_y(0), self.canvas_width, 0.2)
 			cr.stroke()
 
 			# old style axis marks
@@ -309,14 +325,14 @@ class GraphClass:
 			# minor marks
 			for i in marks(self.x_min / factor, self.x_max / factor, minor=10):
 				i = i * factor
-				cr.rectangle(self.canvas_x(i),  center_y_pix - 2, 0.1, 5)
+				cr.rectangle(self.canvas_x(i),  center_y_pix - 2, 0.2, 5)
 				cr.stroke()
 
 			for i in marks(self.y_min, self.y_max, minor=10):
 				label = '%g' % i
-				cr.rectangle(center_x_pix - 2, self.canvas_y(i), 5, 0.1)
+				cr.rectangle(center_x_pix - 2, self.canvas_y(i), 5, 0.2)
 				cr.stroke()
-            
+
 		plots = []
 		# precompile the functions
 		invalid_input = False
@@ -330,7 +346,7 @@ class GraphClass:
 				compiled_y1 = None
 		else:
 			compiled_y1 = None
-			
+
 		if y2:
 			try:
 				compiled_y2 = compile(y2.replace("^","**"),"",'eval')
@@ -341,8 +357,8 @@ class GraphClass:
 				compiled_y2 = None
 		else:
 			compiled_y2 = None
-		
-		if y3:	
+
+		if y3:
 			try:
 				compiled_y3 = compile(y3.replace("^","**"), "", 'eval')
 				plots.append((compiled_y3, 2, (0, 1, 0)))
@@ -369,6 +385,7 @@ class GraphClass:
 						y_c = int(round(self.canvas_y(y)))
 
 						if y_c < 0 or y_c > self.canvas_height:
+							self.prev_y[e[1]] = None
 							break
 
 						cr.set_source_rgb(*e[2])
@@ -382,8 +399,8 @@ class GraphClass:
 
 						self.prev_y[e[1]] = y_c
 					except:
-						#print "Error at %d: %s" % (x, sys.exc_value)
-						set_statusbar("Invalid function")
+						#print ("Error at %d: %s" % (x, sys.exc_info()))
+						set_statusbar("Function invalid at " + str(int(x)))
 						invalid_input = True
 						self.prev_y[e[1]] = None
 
@@ -392,7 +409,7 @@ class GraphClass:
 
 		if not invalid_input:
 			set_statusbar("")
-            
+
 		del cr
 		self.drawing_area.queue_draw()
 
@@ -534,8 +551,8 @@ def menu_toolbar_create():
 	app_win.tool_bar.insert(actions.zoom_in.create_tool_item(), -1)
 	app_win.tool_bar.insert(actions.zoom_out.create_tool_item(), -1)
 	app_win.tool_bar.insert(actions.zoom_reset.create_tool_item(), -1)
-	app_win.tool_bar.insert(Gtk.SeparatorToolItem(), -1)
-	app_win.tool_bar.insert(actions.quit.create_tool_item(), -1)
+	#app_win.tool_bar.insert(Gtk.SeparatorToolItem(), -1)
+	#app_win.tool_bar.insert(actions.quit.create_tool_item(), -1)
 
 
 def plot(widget, event=None):
@@ -747,7 +764,7 @@ def show_about_dialog(widget):
 	about_dialog.set_authors(["Thomas Führinger","Sam Tygier"])
 	about_dialog.set_comments(_("Function Graph Plotter"))
 	about_dialog.set_license("BSD")
-	about_dialog.set_website("https://github.com/thomasfuhringer/lybniz.git")
+	about_dialog.set_website("https://github.com/thomasfuhringer/lybniz")
 	try:
 		lybniz_icon = GdkPixbuf.Pixbuf.new_from_file(icon_file)
 		about_dialog.set_logo(lybniz_icon)
@@ -918,6 +935,8 @@ class LybnizApp(Gtk.Application):
         app_win.add(app_win.v_box)
 
         app_win.status_bar = Gtk.Statusbar()
+        app_win.set_margin_top(0)
+        app_win.set_margin_bottom(0)
 
         menu_toolbar_create()
         app_win.v_box.pack_start(app_win.menu_main, False, True, 0)
