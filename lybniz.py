@@ -376,7 +376,7 @@ class GraphClass:
 
 		cr.set_line_width (0.6)
 		if len(plots) != 0:
-			for i in range(0,self.canvas_width,x_res):
+			for i in range(0, self.canvas_width, x_res):
 				x = self.graph_x(i + 1)
 				for e in plots:
 					safe_dict['x']=x
@@ -386,16 +386,16 @@ class GraphClass:
 
 						if y_c < 0 or y_c > self.canvas_height:
 							self.prev_y[e[1]] = None
-							break
-
-						cr.set_source_rgb(*e[2])
-						if connect_points and self.prev_y[e[1]] is not None:
-							cr.move_to(i, self.prev_y[e[1]])
-							cr.line_to(i + x_res, y_c)
-							cr.stroke()
 						else:
-							cr.rectangle(i + x_res, y_c, 1, 1)
-							cr.fill()
+
+							cr.set_source_rgb(*e[2])
+							if connect_points and self.prev_y[e[1]] is not None:
+								cr.move_to(i, self.prev_y[e[1]])
+								cr.line_to(i + x_res, y_c)
+								cr.stroke()
+							else:
+								cr.rectangle(i + x_res, y_c, 1, 1)
+								cr.fill()
 
 						self.prev_y[e[1]] = y_c
 					except:
