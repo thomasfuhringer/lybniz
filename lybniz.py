@@ -5,10 +5,10 @@
 	Simple Function Graph Plotter
 	© Thomas Führinger, Sam Tygier 2005-2017
 	http://github.com/thomasfuhringer/lybniz
-	Version 3.0.1
+	Version 3.0.2
 	Requires PyGObject 3
 	Released under the terms of the revised BSD license
-	Modified: 2017-01-13
+	Modified: 2017-02-28
 """
 import sys, os, cairo, gettext, configparser
 from math import *
@@ -16,7 +16,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GObject, Pango, Gio, GdkPixbuf
 
-app_version = "3.0.1"
+app_version = "3.0.2"
 
 gettext.install('lybniz')
 
@@ -274,6 +274,7 @@ class GraphClass:
 			# new style
 			factor = 1
 			if (self.scale_style == "rad"): factor = pi
+			if (self.scale_style == "tau"): factor = 2 * pi
 
 			# where to put the numbers
 			numbers_x_pos = -10
@@ -297,6 +298,7 @@ class GraphClass:
 			for i in marks(self.x_min / factor, self.x_max / factor):
 				label = '%g' % i
 				if (self.scale_style == "rad"): label += " π"
+				if (self.scale_style == "tau"): label += " τ"
 				i = i * factor
 
 				cr.rectangle(self.canvas_x(i),  center_y_pix - 5, 0.2, 11)
@@ -510,11 +512,17 @@ def menu_toolbar_create():
 	menu_item_dec = actions.dec.create_menu_item()
 	menu_scale_style.append(menu_item_dec)
 
-	actions.rad = Gtk.Action("Rad", _("Radians"), _("Set style to radians"),None)
+	actions.rad = Gtk.Action("Rad", _("Radians π"), _("Set style to radians"),None)
 	actions.rad.connect ("activate", scale_rad)
 	actions.add_action(actions.rad)
 	menu_item_rad = actions.rad.create_menu_item()
 	menu_scale_style.append(menu_item_rad)
+
+	actions.rad_tau = Gtk.Action("Radτ", _("Radians τ"), _("Set style to radians using Tau (τ)"),None)
+	actions.rad_tau.connect ("activate", scale_rad_tau)
+	actions.add_action(actions.rad_tau)
+	menu_item_rad_tau = actions.rad_tau.create_menu_item()
+	menu_scale_style.append(menu_item_rad_tau)
 
 	actions.cust = Gtk.Action("Cust", _("Custom"), _("Set style to custom"),None)
 	actions.cust.connect ("activate", scale_cust)
@@ -697,6 +705,12 @@ def scale_rad(widget, event=None):
 	plot(None)
 
 
+def scale_rad_tau(widget, event=None):
+	graph.scale_style = "tau"
+	app_win.scale_box.hide()
+	plot(None)
+
+
 def scale_cust(widget, event=None):
 	graph.scale_style = "cust"
 	app_win.scale_box.show()
@@ -849,13 +863,13 @@ def parameter_entries_create():
 
 
 	label = Gtk.Label(label=_("X scale"))
-	label.set_alignment(0, .5)
+	label.set_alignment(1, .5)
 	app_win.scale_box.add(label)
 	#table.attach(label, 2, 3, 2, 3, xpadding=5, ypadding=7, xoptions=Gtk.AttachOptions.FILL)
 	#table.attach(app_win.x_scale_entry, 3, 4, 2, 3, xoptions=Gtk.AttachOptions.FILL)
 	app_win.scale_box.add(app_win.x_scale_entry)
 	label = Gtk.Label(label=_("Y scale"))
-	label.set_alignment(0, .5)
+	label.set_alignment(1, .5)
 	app_win.scale_box.add(label)
 	#table.attach(label, 4, 5, 2, 3, xpadding=5, ypadding=5, xoptions=Gtk.AttachOptions.FILL)
 	#table.attach(app_win.y_scale_entry, 5, 6, 2, 3, xpadding=5, xoptions=Gtk.AttachOptions.FILL)
