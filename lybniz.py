@@ -245,6 +245,7 @@ class GraphClass:
 		cr.paint()
 		cr.set_source_rgb(0, 0, 0)
 		cr.set_line_width (0.2)
+		app_win.status_bar.remove_all(0)
 
 		if (self.scale_style == "cust"):
 
@@ -341,7 +342,7 @@ class GraphClass:
 		if y1:
 			try:
 				compiled_y1 = compile(y1.replace("^","**"), "", 'eval')
-				plots.append((compiled_y1, 0, (0, 0, 1)))
+				plots.append((compiled_y1, 0, (0, 0, 1), y1))
 			except:
 				set_statusbar("Invalid function")
 				invalid_input = True
@@ -352,7 +353,7 @@ class GraphClass:
 		if y2:
 			try:
 				compiled_y2 = compile(y2.replace("^","**"),"",'eval')
-				plots.append((compiled_y2, 1, (1, 0, 0)))
+				plots.append((compiled_y2, 1, (1, 0, 0), y2))
 			except:
 				set_statusbar("Invalid function")
 				invalid_input = True
@@ -363,7 +364,7 @@ class GraphClass:
 		if y3:
 			try:
 				compiled_y3 = compile(y3.replace("^","**"), "", 'eval')
-				plots.append((compiled_y3, 2, (0, 1, 0)))
+				plots.append((compiled_y3, 2, (0, 1, 0), y3))
 			except:
 				set_statusbar("Invalid function")
 				invalid_input = True
@@ -402,7 +403,7 @@ class GraphClass:
 						self.prev_y[e[1]] = y_c
 					except:
 						#print ("Error at %d: %s" % (x, sys.exc_info()))
-						set_statusbar("Function invalid at " + str(int(x)))
+						set_statusbar("Function '" + e[3] + "' is invalid at " + str(int(x)) + ".")
 						invalid_input = True
 						self.prev_y[e[1]] = None
 
