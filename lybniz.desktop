@@ -81,5 +81,5 @@ Exec=lybniz
 Terminal=false
 StartupNotify=true
 Type=Application
-Categories=Education;
+Categories=Education;Math;
 Icon=lybniz
