@@ -8,7 +8,7 @@
     Version 3.0.3
     Requires PyGObject 3
     Released under the terms of the revised BSD license
-    Modified: 2018-08-01
+    Modified: 2018-08-03
 """
 import sys, os, cairo, gettext, configparser
 from math import *
@@ -621,25 +621,29 @@ def evaluate(widget, event=None):
     dlg_win.y3_entry.set_sensitive(False)
 
     grid = Gtk.Grid()
-    grid.set_property("row-spacing", 4)
+    grid.set_property("row-spacing", 2)
     grid.set_property("column-spacing", 10)
     grid.set_border_width(24)
 
     label = Gtk.Label(label="x = ")
     label.set_valign(Gtk.Align.CENTER)
+    label.set_halign(Gtk.Align.START)
     grid.add(label)
     grid.attach(dlg_win.x_entry, 1, 0, 1, 1)
     label = Gtk.Label(label="y1 = ")
+    label.set_halign(Gtk.Align.START)
     label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("blue"))
     label.set_valign(Gtk.Align.CENTER)
     grid.attach(label, 0, 1, 1, 1)
     grid.attach(dlg_win.y1_entry, 1, 1, 1, 1)
     label = Gtk.Label(label="y2 = ")
+    label.set_halign(Gtk.Align.START)
     label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("red"))
     label.set_valign(Gtk.Align.CENTER)
     grid.attach(label, 0, 2, 1, 1)
     grid.attach(dlg_win.y2_entry, 1, 2, 1, 1)
     label = Gtk.Label(label="y3 = ")
+    label.set_halign(Gtk.Align.START)
     label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("DarkGreen"))
     label.set_valign(Gtk.Align.CENTER)
     grid.attach(label, 0, 3, 1, 1)
@@ -787,28 +791,34 @@ def parameter_entries_create():
     # create text entries for parameters
 
     app_win.y1_entry = Gtk.Entry()
-    app_win.y1_entry.set_size_request(300, 14)
+    app_win.y1_entry.set_size_request(300, 24)
     app_win.y1_entry.set_hexpand(True)
     app_win.y2_entry = Gtk.Entry()
     app_win.y3_entry = Gtk.Entry()
-    app_win.y3_entry.set_size_request(300, 14)
+    app_win.y3_entry.set_size_request(300, 24)
     app_win.x_min_entry = Gtk.Entry()
-    app_win.x_min_entry.set_size_request(90, 14)
+    app_win.x_min_entry.set_width_chars(3)
+    app_win.x_min_entry.set_size_request(140, 24)
     app_win.x_min_entry.set_alignment(xalign=1)
     app_win.x_max_entry = Gtk.Entry()
-    app_win.x_max_entry.set_size_request(90, 14)
+    app_win.x_max_entry.set_width_chars(3)
+    app_win.x_max_entry.set_size_request(140, 24)
     app_win.x_max_entry.set_alignment(xalign=1)
     app_win.x_scale_entry = Gtk.Entry()
-    app_win.x_scale_entry.set_size_request(90, 14)
+    app_win.x_scale_entry.set_width_chars(3)
+    app_win.x_scale_entry.set_size_request(140, 24)
     app_win.x_scale_entry.set_alignment(xalign=1)
     app_win.y_min_entry = Gtk.Entry()
-    app_win.y_min_entry.set_size_request(90, 14)
+    app_win.y_min_entry.set_width_chars(3)
+    app_win.y_min_entry.set_size_request(140, 24)
     app_win.y_min_entry.set_alignment(xalign=1)
     app_win.y_max_entry = Gtk.Entry()
-    app_win.y_max_entry.set_size_request(90, 14)
+    app_win.y_max_entry.set_width_chars(3)
+    app_win.y_max_entry.set_size_request(140, 24)
     app_win.y_max_entry.set_alignment(xalign=1)
     app_win.y_scale_entry = Gtk.Entry()
-    app_win.y_scale_entry.set_size_request(90, 14)
+    app_win.y_scale_entry.set_width_chars(3)
+    app_win.y_scale_entry.set_size_request(140, 24)
     app_win.y_scale_entry.set_alignment(xalign=1)
 
     parameter_entries_populate()
@@ -833,15 +843,18 @@ def parameter_entries_create():
 
     label = Gtk.Label(label="y1 = ")
     label.set_valign(Gtk.Align.CENTER)
+    label.set_halign(Gtk.Align.START)
     label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("blue"))
     grid.add(label)
     grid.attach(app_win.y1_entry, 1, 0, 1, 1)
     label = Gtk.Label(label=_("X min"))
     label.set_valign(Gtk.Align.CENTER)
+    label.set_halign(Gtk.Align.START)
     grid.attach(label, 2, 0, 1, 1)
     grid.attach(app_win.x_min_entry, 3, 0, 1, 1)
     label = Gtk.Label(label=_("Y min"))
     label.set_valign(Gtk.Align.CENTER)
+    label.set_halign(Gtk.Align.START)
     grid.attach(label, 4, 0, 1, 1)
     grid.attach(app_win.y_min_entry, 5, 0, 1, 1)
 
@@ -853,11 +866,13 @@ def parameter_entries_create():
 
     label = Gtk.Label(label=_("X max"))
     label.set_valign(Gtk.Align.CENTER)
+    label.set_halign(Gtk.Align.START)
     grid.attach(label, 2, 1, 1, 1)
     grid.attach(app_win.x_max_entry, 3, 1, 1, 1)
 
     label = Gtk.Label(label=_("Y max"))
     label.set_valign(Gtk.Align.CENTER)
+    label.set_halign(Gtk.Align.START)
     grid.attach(label, 4, 1, 1, 1)
     grid.attach(app_win.y_max_entry, 5, 1, 1, 1)
 
