@@ -5,10 +5,10 @@
     Simple Function Graph Plotter
     © Thomas Führinger, Sam Tygier 2005-2018
     https://github.com/thomasfuhringer/lybniz
-    Version 3.0.3
+    Version 3.0.4
     Requires PyGObject 3
     Released under the terms of the revised BSD license
-    Modified: 2018-08-03
+    Modified: 2018-08-06
 """
 import sys, os, cairo, gettext, configparser
 from math import *
@@ -16,7 +16,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GObject, Pango, Gio, GdkPixbuf
 
-app_version = "3.0.3"
+app_version = "3.0.4"
 
 gettext.install("lybniz")
 
@@ -215,10 +215,10 @@ class GraphClass:
             self.previousMouseX = event.x
             self.previousMouseY = event.y
 
-        def scroll_event(widget, event):
-            if event.direction == Gdk.ModifierType.SCROLL_UP:
+        def da_scroll_event(widget, event):
+            if event.direction == Gdk.ScrollDirection.UP:
                 zoom_in(None)
-            elif event.direction == Gdk.ModifierType.SCROLL_DOWN:
+            elif event.direction == Gdk.ScrollDirection.DOWN:
                 zoom_out(None)
 
         self.prev_y = [None, None, None]
@@ -232,8 +232,8 @@ class GraphClass:
         self.drawing_area.connect("button_press_event", button_press_event)
         self.drawing_area.connect("button_release_event", da_button_release_event)
         self.drawing_area.connect("motion_notify_event", da_motion_notify_event)
-        self.drawing_area.connect("scroll_event", scroll_event)
-        self.drawing_area.set_events(Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK |Gdk.EventMask.POINTER_MOTION_HINT_MASK)
+        self.drawing_area.connect("scroll-event", da_scroll_event)
+        self.drawing_area.set_events(Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK | Gdk.EventMask.POINTER_MOTION_HINT_MASK | Gdk.EventMask.SCROLL_MASK)
         self.scale_style = "dec"
 
     def plot(self):
@@ -341,7 +341,7 @@ class GraphClass:
                 compiled_y1 = compile(y1.replace("^","**"), "", 'eval')
                 plots.append((compiled_y1, 0, (0, 0, 1), y1))
             except:
-                set_statusbar("Invalid function")
+                set_statusbar("Function '" + y1 + "' is invalid.")
                 invalid_input = True
                 compiled_y1 = None
         else:
@@ -352,7 +352,7 @@ class GraphClass:
                 compiled_y2 = compile(y2.replace("^","**"),"",'eval')
                 plots.append((compiled_y2, 1, (1, 0, 0), y2))
             except:
-                set_statusbar("Invalid function")
+                set_statusbar("Function '" + y2 + "' is invalid.")
                 invalid_input = True
                 compiled_y2 = None
         else:
@@ -363,7 +363,7 @@ class GraphClass:
                 compiled_y3 = compile(y3.replace("^","**"), "", 'eval')
                 plots.append((compiled_y3, 2, (0, 1, 0), y3))
             except:
-                set_statusbar("Invalid function")
+                set_statusbar("Function '" + y3 + "' is invalid.")
                 invalid_input = True
                 compiled_y3 = None
         else:
@@ -538,7 +538,7 @@ def menu_toolbar_create():
     actions.add_action(actions.Help)
     menu_item_contents = actions.Help.create_menu_item()
     menu_item_contents.add_accelerator("activate", app_win.accel_group, Gdk.keyval_from_name("F1"), 0, Gtk.AccelFlags.VISIBLE)
-    menu_help.append(menu_item_contents)
+    #menu_help.append(menu_item_contents)
 
     actions.about = Gtk.Action("About", _("_About"), _("About Box"), Gtk.STOCK_ABOUT)
     actions.about.connect ("activate", show_about_dialog)
@@ -596,14 +596,14 @@ def evaluate(widget, event=None):
                 e[1].set_text(str(eval(e[0].replace("^","**"),{"__builtins__":{}},safe_dict)))
             except:
                 if len(e[0]) > 0:
-                    e[1].set_text("Error: %s" % sys.exc_value)
+                    e[1].set_text("Error: " + str(sys.exc_info()[1]))
                 else:
                     e[1].set_text("")
 
     def close(self):
         dlg_win.destroy()
 
-    dlg_win = Gtk.Window(Gtk.WindowType.TOPLEVEL)
+    dlg_win = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
     dlg_win.set_title(_("Evaluate"))
     dlg_win.connect("destroy", close)
 
@@ -949,8 +949,10 @@ class LybnizApp(Gtk.Application):
             min-width: 12px;
         }
         toolbar, statusbar {
+            margin-left: 0px;
             margin-top: 0px;
             margin-bottom: 0px;
+            padding-left: 0px;
             padding-top: 0px;
             padding-bottom: 0px;
             min-height: 10px;
@@ -960,7 +962,6 @@ class LybnizApp(Gtk.Application):
         style_provider.load_from_data(css.encode());
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default(), style_provider,
                                                   Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
 
         app_win = Gtk.ApplicationWindow(application=self, title="Lybniz")
         app_win.connect("delete-event", quit_dlg)
@@ -980,27 +981,24 @@ class LybnizApp(Gtk.Application):
         app_win.accel_group = Gtk.AccelGroup()
         app_win.add_accel_group(app_win.accel_group)
 
-        app_win.v_box = Gtk.VBox(False, 1)
-        app_win.v_box.set_border_width(1)
-        app_win.add(app_win.v_box)
+        app_win.v_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+        #app_win.v_box.set_border_width(1)
+
+        menu_toolbar_create()
+        app_win.v_box.pack_start(app_win.menu_main, False, False, 0)
+        app_win.v_box.pack_start(app_win.tool_bar, False, False, 0)
+
+        app_win.v_box.pack_start(parameter_entries_create(), False, False, 4)
+
+        graph = GraphClass()
+        app_win.v_box.pack_start(graph.drawing_area, True, True, 0)
 
         app_win.status_bar = Gtk.Statusbar()
         app_win.status_bar.set_margin_top(0)
         app_win.status_bar.set_margin_bottom(0)
+        app_win.v_box.pack_start(app_win.status_bar, False, False, 0)
 
-        menu_toolbar_create()
-        app_win.v_box.pack_start(app_win.menu_main, False, True, 0)
-
-        handle_box = Gtk.HandleBox()
-        handle_box.add(app_win.tool_bar)
-        app_win.v_box.pack_start(handle_box, False, True, 0)
-
-        app_win.v_box.pack_start(parameter_entries_create(), False, True, 4)
-
-        graph = GraphClass()
-        app_win.v_box.pack_start(graph.drawing_area, True, True, 0)
-        app_win.v_box.pack_start(app_win.status_bar, False, True, 0)
-
+        app_win.add(app_win.v_box)
         app_win.show_all()
         app_win.scale_grid.hide()
         self.add_window(app_win)
