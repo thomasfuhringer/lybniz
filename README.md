@@ -6,4 +6,4 @@ Now updated to GTK 3.
 
 Runs on Windows using MinGW
 
-![](images/ScreenshotWin.png)
+![](images/ScreenshotWin.jpg)
