@@ -255,13 +255,10 @@ xScale = pi / 2
 
 <sect1 id="lybniz-about"> 
 	<title>About &app;</title> 
-	<para><application>&app;</application> was originally written by Thomas Führinger
-      (<email>ThomasFuhringer@Yahoo.com</email>). It is now maintained by Sam Tygier 
-      (<email>samtygier@yahoo.co.uk</email>).
+	<para><application>&app;</application> was  written by Thomas Führinger and extended by Sam Tygier.</para>
       
-      To find more information about
-      <application>&app;</application>, please visit the 
-      <ulink url="github.com/thomasfuhringer/lybniz" type="http">&app; Web
+      <para>To get the latest version please visit the 
+      <ulink url="https://github.com/thomasfuhringer/lybniz" type="http">&app; Web
 	page</ulink>. </para>
 
     <para>This program is distributed under the revised BSD license.</para>

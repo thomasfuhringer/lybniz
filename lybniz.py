@@ -8,7 +8,7 @@
     Version 3.0.4
     Requires PyGObject 3
     Released under the terms of the revised BSD license
-    Modified: 2018-08-06
+    Modified: 2018-08-16
 """
 import sys, os, cairo, gettext, configparser
 from math import *
@@ -26,7 +26,7 @@ if enable_profiling:
     from time import time
 
 app_win = None
-actions = Gtk.ActionGroup("General")
+actions = Gtk.ActionGroup(name="General")
 graph = None
 connect_points = True
 configFile = os.path.expanduser("~/.lybniz.cfg")
@@ -435,18 +435,18 @@ def menu_toolbar_create():
     app_win.menu_main = Gtk.MenuBar()
 
     menu_file = Gtk.Menu()
-    menu_item_file = Gtk.MenuItem(_("_File"))
+    menu_item_file = Gtk.MenuItem(label=_("_File"))
     menu_item_file.set_submenu(menu_file)
     menu_item_file.set_use_underline(True)
 
-    actions.save = Gtk.Action("Save", _("_Save"), _("Save graph as bitmap"), Gtk.STOCK_SAVE)
+    actions.save = Gtk.Action(name="Save", label=_("_Save"), tooltip=_("Save graph as bitmap"), stock_id=Gtk.STOCK_SAVE)
     actions.save.connect ("activate", save)
     actions.add_action(actions.save)
     menu_item_save = actions.save.create_menu_item()
     menu_item_save.add_accelerator("activate", app_win.accel_group, ord("S"), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
     menu_file.append(menu_item_save)
 
-    actions.quit = Gtk.Action("Quit", _("_Quit"), _("Quit Application"), Gtk.STOCK_QUIT)
+    actions.quit = Gtk.Action(name="Quit", label=_("_Quit"), tooltip=_("Quit Application"), stock_id=Gtk.STOCK_QUIT)
     actions.quit.connect ("activate", quit_dlg)
     actions.add_action(actions.quit)
     menuItem_quit = actions.quit.create_menu_item()
@@ -454,93 +454,93 @@ def menu_toolbar_create():
     menu_file.append(menuItem_quit)
 
     menu_graph = Gtk.Menu()
-    menu_item_graph = Gtk.MenuItem(_("_Graph"))
+    menu_item_graph = Gtk.MenuItem(label=_("_Graph"))
     menu_item_graph.set_submenu(menu_graph)
     menu_item_graph.set_use_underline(True)
 
-    actions.plot = Gtk.Action("Plot", _("P_lot"), _("Plot Functions"), stock_id=Gtk.STOCK_REFRESH)
+    actions.plot = Gtk.Action(name="Plot", label=_("P_lot"), tooltip=_("Plot Functions"), stock_id=Gtk.STOCK_REFRESH)
     actions.plot.connect ("activate", plot)
     actions.add_action(actions.plot)
     menu_item_plot = actions.plot.create_menu_item()
     menu_item_plot.add_accelerator("activate", app_win.accel_group, ord("l"), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
     menu_graph.append(menu_item_plot)
 
-    actions.evaluate = Gtk.Action("Evaluate", _("_Evaluate"), _("Evaluate Functions"), stock_id=Gtk.STOCK_EXECUTE)
+    actions.evaluate = Gtk.Action(name="Evaluate", label=_("_Evaluate"), tooltip=_("Evaluate Functions"), stock_id=Gtk.STOCK_EXECUTE)
     actions.evaluate.connect ("activate", evaluate)
     actions.add_action(actions.evaluate)
     menu_item_evaluate = actions.evaluate.create_menu_item()
     menu_item_evaluate.add_accelerator("activate", app_win.accel_group, ord("e"), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
     menu_graph.append(menu_item_evaluate)
 
-    actions.zoom_in = Gtk.Action("zoom_in", _("Zoom _In"), _("Zoom In"), Gtk.STOCK_ZOOM_IN)
+    actions.zoom_in = Gtk.Action(name="zoom_in", label=_("Zoom _In"), tooltip=_("Zoom In"), stock_id=Gtk.STOCK_ZOOM_IN)
     actions.zoom_in.connect ("activate", zoom_in)
     actions.add_action(actions.zoom_in)
     menu_item_zoomin = actions.zoom_in.create_menu_item()
     menu_item_zoomin.add_accelerator("activate", app_win.accel_group, ord("+"), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
     menu_graph.append(menu_item_zoomin)
 
-    actions.zoom_out = Gtk.Action("zoom_out", _("Zoom _Out"), _("Zoom Out"), Gtk.STOCK_ZOOM_OUT)
+    actions.zoom_out = Gtk.Action(name="zoom_out", label=_("Zoom _Out"), tooltip=_("Zoom Out"), stock_id=Gtk.STOCK_ZOOM_OUT)
     actions.zoom_out.connect ("activate", zoom_out)
     actions.add_action(actions.zoom_out)
     menu_item_zoomout = actions.zoom_out.create_menu_item()
     menu_item_zoomout.add_accelerator("activate", app_win.accel_group, ord("-"), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
     menu_graph.append(menu_item_zoomout)
 
-    actions.zoom_reset = Gtk.Action("zoom_reset", _("Zoom _Reset"), _("Zoom Reset"), Gtk.STOCK_ZOOM_100)
+    actions.zoom_reset = Gtk.Action(name="zoom_reset", label=_("Zoom _Reset"), tooltip=_("Zoom Reset"), stock_id=Gtk.STOCK_ZOOM_100)
     actions.zoom_reset.connect ("activate", zoom_reset)
     actions.add_action(actions.zoom_reset)
     menu_item_zoomreset = actions.zoom_reset.create_menu_item()
     menu_item_zoomreset.add_accelerator("activate", app_win.accel_group, ord("r"), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
     menu_graph.append(menu_item_zoomreset)
 
-    menu_item_toggle_connect = Gtk.CheckMenuItem(_("_Connect Points"))
+    menu_item_toggle_connect = Gtk.CheckMenuItem(label=_("_Connect Points"))
     menu_item_toggle_connect.set_active(True)
     menu_item_toggle_connect.set_use_underline(True)
     menu_item_toggle_connect.connect ("toggled", toggle_connect)
     menu_graph.append(menu_item_toggle_connect)
 
     menu_scale_style = Gtk.Menu()
-    menu_item_scale_style = Gtk.MenuItem(_("Scale Style"))
+    menu_item_scale_style = Gtk.MenuItem(label=_("Scale Style"))
     menu_item_scale_style.set_submenu(menu_scale_style)
     menu_graph.append(menu_item_scale_style)
 
-    actions.dec = Gtk.Action("Dec", _("Decimal"), _("Set style to decimal"),None)
+    actions.dec = Gtk.Action(name="Dec", label=_("Decimal"), tooltip=_("Set style to decimal"), stock_id=None)
     actions.dec.connect ("activate", scale_dec)
     actions.add_action(actions.dec)
     menu_item_dec = actions.dec.create_menu_item()
     menu_scale_style.append(menu_item_dec)
 
-    actions.rad = Gtk.Action("Rad", _("Radians π"), _("Set style to radians"),None)
+    actions.rad = Gtk.Action(name="Rad", label=_("Radians π"), tooltip=_("Set style to radians"), stock_id=None)
     actions.rad.connect ("activate", scale_rad)
     actions.add_action(actions.rad)
     menu_item_rad = actions.rad.create_menu_item()
     menu_scale_style.append(menu_item_rad)
 
-    actions.rad_tau = Gtk.Action("Radτ", _("Radians τ"), _("Set style to radians using Tau (τ)"),None)
+    actions.rad_tau = Gtk.Action(name="Radτ", label=_("Radians τ"), tooltip=_("Set style to radians using Tau (τ)"), stock_id=None)
     actions.rad_tau.connect ("activate", scale_rad_tau)
     actions.add_action(actions.rad_tau)
     menu_item_rad_tau = actions.rad_tau.create_menu_item()
     menu_scale_style.append(menu_item_rad_tau)
 
-    actions.cust = Gtk.Action("Cust", _("Custom"), _("Set style to custom"),None)
+    actions.cust = Gtk.Action(name="Cust", label=_("Custom"), tooltip=_("Set style to custom"), stock_id=None)
     actions.cust.connect ("activate", scale_cust)
     actions.add_action(actions.cust)
     menu_item_cust = actions.cust.create_menu_item()
     menu_scale_style.append(menu_item_cust)
 
     menu_help = Gtk.Menu()
-    menu_item_help = Gtk.MenuItem("_Help", True)
+    menu_item_help = Gtk.MenuItem(label="_Help", use_underline=True)
     menu_item_help.set_submenu(menu_help)
     menu_item_help.set_use_underline(True)
 
-    actions.Help = Gtk.Action("Help", _("_Contents"), _("Help Contents"), Gtk.STOCK_HELP)
+    actions.Help = Gtk.Action(name="Help", label=_("_Contents"), tooltip=_("Help Contents"), stock_id=Gtk.STOCK_HELP)
     actions.Help.connect ("activate", show_yelp)
     actions.add_action(actions.Help)
     menu_item_contents = actions.Help.create_menu_item()
     menu_item_contents.add_accelerator("activate", app_win.accel_group, Gdk.keyval_from_name("F1"), 0, Gtk.AccelFlags.VISIBLE)
-    #menu_help.append(menu_item_contents)
+    menu_help.append(menu_item_contents)
 
-    actions.about = Gtk.Action("About", _("_About"), _("About Box"), Gtk.STOCK_ABOUT)
+    actions.about = Gtk.Action(name="About", label=_("_About"), tooltip=_("About Box"), stock_id=Gtk.STOCK_ABOUT)
     actions.about.connect ("activate", show_about_dialog)
     actions.add_action(actions.about)
     menu_item_about = actions.about.create_menu_item()
@@ -632,20 +632,20 @@ def evaluate(widget, event=None):
     grid.attach(dlg_win.x_entry, 1, 0, 1, 1)
     label = Gtk.Label(label="y1 = ")
     label.set_halign(Gtk.Align.START)
-    label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("blue"))
     label.set_valign(Gtk.Align.CENTER)
+    label.get_style_context().add_class("y1")
     grid.attach(label, 0, 1, 1, 1)
     grid.attach(dlg_win.y1_entry, 1, 1, 1, 1)
     label = Gtk.Label(label="y2 = ")
     label.set_halign(Gtk.Align.START)
-    label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("red"))
     label.set_valign(Gtk.Align.CENTER)
+    label.get_style_context().add_class("y2")
     grid.attach(label, 0, 2, 1, 1)
     grid.attach(dlg_win.y2_entry, 1, 2, 1, 1)
     label = Gtk.Label(label="y3 = ")
     label.set_halign(Gtk.Align.START)
-    label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("DarkGreen"))
     label.set_valign(Gtk.Align.CENTER)
+    label.get_style_context().add_class("y3")
     grid.attach(label, 0, 3, 1, 1)
     grid.attach(dlg_win.y3_entry, 1, 3, 1, 1)
 
@@ -766,10 +766,11 @@ def quit_dlg(widget, event=None):
 
 
 def show_yelp(widget):
-    #import os
-    #os.system("yelp /usr/share/gnome/help/lybniz/C/lybniz-manual.xml")
     try:
-        Gtk.show_uri(None, "lybniz", 0)
+        import os
+        os.system("yelp doc/lybniz.xml")
+        #os.system("yelp /usr/share/gnome/help/lybniz/C/lybniz.xml")
+        #Gtk.show_uri(None, "lybniz", 0)
     except:
         print ("Can't Show help")
 
@@ -844,7 +845,7 @@ def parameter_entries_create():
     label = Gtk.Label(label="y1 = ")
     label.set_valign(Gtk.Align.CENTER)
     label.set_halign(Gtk.Align.START)
-    label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("blue"))
+    label.get_style_context().add_class("y1")
     grid.add(label)
     grid.attach(app_win.y1_entry, 1, 0, 1, 1)
     label = Gtk.Label(label=_("X min"))
@@ -860,7 +861,7 @@ def parameter_entries_create():
 
     label = Gtk.Label(label="y2 = ")
     label.set_valign(Gtk.Align.CENTER)
-    label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("red"))
+    label.get_style_context().add_class("y2")
     grid.attach(label, 0, 1, 1, 1)
     grid.attach(app_win.y2_entry, 1, 1, 1, 1)
 
@@ -878,7 +879,7 @@ def parameter_entries_create():
 
     label = Gtk.Label(label="y3 = ")
     label.set_valign(Gtk.Align.CENTER)
-    label.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse("DarkGreen"))
+    label.get_style_context().add_class("y3")
     grid.attach(label, 0, 2, 1, 1)
     grid.attach(app_win.y3_entry, 1, 2, 1, 1)
 
@@ -948,6 +949,10 @@ class LybnizApp(Gtk.Application):
             min-height: 20px;
             min-width: 12px;
         }
+        entry {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
         toolbar, statusbar {
             margin-left: 0px;
             margin-top: 0px;
@@ -956,6 +961,15 @@ class LybnizApp(Gtk.Application):
             padding-top: 0px;
             padding-bottom: 0px;
             min-height: 10px;
+        }
+        label.y1 {
+            color: blue;
+        }
+        label.y2 {
+            color: red;
+        }
+        label.y3 {
+            color: green;
         }
         """
 
@@ -1303,4 +1317,4 @@ lybniz_icon = GdkPixbuf.Pixbuf.new_from_xpm_data((
 
 if __name__ == "__main__":
     app = LybnizApp()
-    app.run(None)
+    app.run(sys.argv)
