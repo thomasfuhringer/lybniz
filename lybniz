@@ -341,7 +341,7 @@ class GraphClass:
                 compiled_y1 = compile(y1.replace("^","**"), "", 'eval')
                 plots.append((compiled_y1, 0, (0, 0, 1), y1))
             except:
-                set_statusbar("Function '" + y1 + "' is invalid.")
+                set_statusbar(_("Function") + " '" + y1 + "' " + _("is invalid."))
                 invalid_input = True
                 compiled_y1 = None
         else:
@@ -352,7 +352,7 @@ class GraphClass:
                 compiled_y2 = compile(y2.replace("^","**"),"",'eval')
                 plots.append((compiled_y2, 1, (1, 0, 0), y2))
             except:
-                set_statusbar("Function '" + y2 + "' is invalid.")
+                set_statusbar(_("Function") + " '" + y2 + "' " + _("is invalid."))
                 invalid_input = True
                 compiled_y2 = None
         else:
@@ -363,7 +363,7 @@ class GraphClass:
                 compiled_y3 = compile(y3.replace("^","**"), "", 'eval')
                 plots.append((compiled_y3, 2, (0, 1, 0), y3))
             except:
-                set_statusbar("Function '" + y3 + "' is invalid.")
+                set_statusbar(_("Function") + " '" + y3 + "' " + _("is invalid."))
                 invalid_input = True
                 compiled_y3 = None
         else:
@@ -400,7 +400,7 @@ class GraphClass:
                         self.prev_y[e[1]] = y_c
                     except:
                         #print ("Error at %d: %s" % (x, sys.exc_info()))
-                        set_statusbar("Function '" + e[3] + "' is invalid at " + str(int(x)) + ".")
+                        set_statusbar(_("Function") + " '" + e[3] + "' " + _("is invalid at") + " " + str(int(x)) + ".")
                         invalid_input = True
                         self.prev_y[e[1]] = None
 
