@@ -7,3 +7,7 @@ Version 3 based on GTK+ 3.
 Runs on Windows using MinGW
 
 ![](images/ScreenshotWin.png)
+
+Translations
+
+You're welcome to translate: https://www.transifex.com/Magic/lybniz

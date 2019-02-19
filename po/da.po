@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# AlexL <loginov.alex.valer@gmail.com>, 2019
+# Joe Hansen <joedalton2@yahoo.dk>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: lybniz\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-19 09:38+0300\n"
+"PO-Revision-Date: 2019-02-19 05:22+0000\n"
+"Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
+"Language-Team: Danish (http://www.transifex.com/Magic/lybniz/language/da/)\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367 ../lybniz:404
+msgid "Function"
+msgstr ""
+
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367
+msgid "is invalid."
+msgstr ""
+
+#: ../lybniz:404
+msgid "is invalid at"
+msgstr ""
+
+#: ../lybniz:439
+msgid "_File"
+msgstr "_Fil"
+
+#: ../lybniz:443
+msgid "_Save"
+msgstr "_Gem"
+
+#: ../lybniz:443
+msgid "Save graph as bitmap"
+msgstr "Gem graf som bitmap"
+
+#: ../lybniz:450
+msgid "_Quit"
+msgstr "_Afslut"
+
+#: ../lybniz:450
+msgid "Quit Application"
+msgstr "Afslut program"
+
+#: ../lybniz:458
+msgid "_Graph"
+msgstr "_Graf"
+
+#: ../lybniz:462
+msgid "P_lot"
+msgstr "P_lot"
+
+#: ../lybniz:462
+msgid "Plot Functions"
+msgstr "Plotfunktioner"
+
+#: ../lybniz:469
+msgid "_Evaluate"
+msgstr "_Evaluer"
+
+#: ../lybniz:469
+msgid "Evaluate Functions"
+msgstr "Evaluer funktioner"
+
+#: ../lybniz:476
+msgid "Zoom _In"
+msgstr "Zoom _ind"
+
+#: ../lybniz:476
+msgid "Zoom In"
+msgstr "Zoom ind"
+
+#: ../lybniz:483
+msgid "Zoom _Out"
+msgstr "Zoom _ud"
+
+#: ../lybniz:483
+msgid "Zoom Out"
+msgstr "Zoom ud"
+
+#: ../lybniz:490
+msgid "Zoom _Reset"
+msgstr "Zoom_nulstilling"
+
+#: ../lybniz:490
+msgid "Zoom Reset"
+msgstr "Zoomnulstilling"
+
+#: ../lybniz:497
+msgid "_Connect Points"
+msgstr "_Forbind punkter"
+
+#: ../lybniz:504
+msgid "Scale Style"
+msgstr "Skalastil"
+
+#: ../lybniz:508
+msgid "Decimal"
+msgstr "Decimal"
+
+#: ../lybniz:508
+msgid "Set style to decimal"
+msgstr "Sæt stilen til decimal"
+
+#: ../lybniz:514
+msgid "Radians π"
+msgstr ""
+
+#: ../lybniz:514
+msgid "Set style to radians"
+msgstr "Sæt stilen til radianer"
+
+#: ../lybniz:520
+msgid "Radians τ"
+msgstr ""
+
+#: ../lybniz:520
+msgid "Set style to radians using Tau (τ)"
+msgstr ""
+
+#: ../lybniz:526
+msgid "Custom"
+msgstr "Tilpasset"
+
+#: ../lybniz:526
+msgid "Set style to custom"
+msgstr "Sæt stil til tilpasset"
+
+#: ../lybniz:533
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: ../lybniz:537
+msgid "_Contents"
+msgstr "_Indhold"
+
+#: ../lybniz:537
+msgid "Help Contents"
+msgstr "Hjælpeindhold"
+
+#: ../lybniz:544
+msgid "_About"
+msgstr "_Om"
+
+#: ../lybniz:544
+msgid "About Box"
+msgstr "Om Box"
+
+#: ../lybniz:608
+msgid "Evaluate"
+msgstr "Evaluer"
+
+#: ../lybniz:735
+msgid "Save as..."
+msgstr "Gem som ..."
+
+#: ../lybniz:790
+msgid "Function Graph Plotter"
+msgstr "Plotprogram for funktionsgraf"
+
+#: ../lybniz:858
+msgid "X min"
+msgstr "X min"
+
+#: ../lybniz:863
+msgid "Y min"
+msgstr "Y min"
+
+#: ../lybniz:875
+msgid "X max"
+msgstr "X maks"
+
+#: ../lybniz:881
+msgid "Y max"
+msgstr "Y maks"
+
+#: ../lybniz:893
+msgid "X scale"
+msgstr "X-skala"
+
+#: ../lybniz:898
+msgid "Y scale"
+msgstr "Y-skala"
+
+#: ../lybniz.desktop:3
+msgid "Lybniz"
+msgstr "Lybniz"
+
+#: ../lybniz.desktop:4
+msgid "Lybniz Graph Plotter"
+msgstr "Grafplotprogrammet Lybniz"
+
+#: ../lybniz.desktop:42
+msgid "Plot graphs and functions"
+msgstr "Plot grafer og funktioner"
+
+#: ../lybniz.desktop:90
+msgid "lybniz"
+msgstr "lybniz"

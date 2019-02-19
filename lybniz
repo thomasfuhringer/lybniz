@@ -15,6 +15,7 @@ from math import *
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GObject, Pango, Gio, GdkPixbuf
+from pathlib import Path
 
 app_version = "3.0.4"
 
@@ -341,7 +342,7 @@ class GraphClass:
                 compiled_y1 = compile(y1.replace("^","**"), "", 'eval')
                 plots.append((compiled_y1, 0, (0, 0, 1), y1))
             except:
-                set_statusbar("Function '" + y1 + "' is invalid.")
+                set_statusbar(_("Function") + " '" + y1 + "' " + _("is invalid."))
                 invalid_input = True
                 compiled_y1 = None
         else:
@@ -352,7 +353,7 @@ class GraphClass:
                 compiled_y2 = compile(y2.replace("^","**"),"",'eval')
                 plots.append((compiled_y2, 1, (1, 0, 0), y2))
             except:
-                set_statusbar("Function '" + y2 + "' is invalid.")
+                set_statusbar(_("Function") + " '" + y2 + "' " + _("is invalid."))
                 invalid_input = True
                 compiled_y2 = None
         else:
@@ -363,7 +364,7 @@ class GraphClass:
                 compiled_y3 = compile(y3.replace("^","**"), "", 'eval')
                 plots.append((compiled_y3, 2, (0, 1, 0), y3))
             except:
-                set_statusbar("Function '" + y3 + "' is invalid.")
+                set_statusbar(_("Function") + " '" + y3 + "' " + _("is invalid."))
                 invalid_input = True
                 compiled_y3 = None
         else:
@@ -400,7 +401,7 @@ class GraphClass:
                         self.prev_y[e[1]] = y_c
                     except:
                         #print ("Error at %d: %s" % (x, sys.exc_info()))
-                        set_statusbar("Function '" + e[3] + "' is invalid at " + str(int(x)) + ".")
+                        set_statusbar(_("Function") + " '" + e[3] + "' " + _("is invalid at") + " " + str(int(x)) + ".")
                         invalid_input = True
                         self.prev_y[e[1]] = None
 
@@ -529,7 +530,7 @@ def menu_toolbar_create():
     menu_scale_style.append(menu_item_cust)
 
     menu_help = Gtk.Menu()
-    menu_item_help = Gtk.MenuItem(label="_Help", use_underline=True)
+    menu_item_help = Gtk.MenuItem(label=_("_Help"), use_underline=True)
     menu_item_help.set_submenu(menu_help)
     menu_item_help.set_use_underline(True)
 
@@ -768,7 +769,13 @@ def quit_dlg(widget, event=None):
 def show_yelp(widget):
     try:
         import os
-        os.system("yelp doc/lybniz.xml")
+        xml_file = Path("doc/lybniz.xml")
+        if xml_file.is_file():
+             os.system("yelp doc/lybniz.xml")
+        else:
+             xml_file = Path("/usr/share/gnome/help/lybniz/C/lybniz.xml")
+             if xml_file.is_file():
+                 os.system("yelp /usr/share/gnome/help/lybniz/C/lybniz.xml")
         #os.system("yelp /usr/share/gnome/help/lybniz/C/lybniz.xml")
         #Gtk.show_uri(None, "lybniz", 0)
     except:

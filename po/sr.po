@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# AlexL <loginov.alex.valer@gmail.com>, 2019
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: lybniz\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-19 09:38+0300\n"
+"PO-Revision-Date: 2019-02-19 05:22+0000\n"
+"Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
+"Language-Team: Serbian (http://www.transifex.com/Magic/lybniz/language/sr/)\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367 ../lybniz:404
+msgid "Function"
+msgstr ""
+
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367
+msgid "is invalid."
+msgstr ""
+
+#: ../lybniz:404
+msgid "is invalid at"
+msgstr ""
+
+#: ../lybniz:439
+msgid "_File"
+msgstr "_Датотека"
+
+#: ../lybniz:443
+msgid "_Save"
+msgstr "_Сачувај"
+
+#: ../lybniz:443
+msgid "Save graph as bitmap"
+msgstr "Сачувајте график као слику битмапe"
+
+#: ../lybniz:450
+msgid "_Quit"
+msgstr "_Изађи"
+
+#: ../lybniz:450
+msgid "Quit Application"
+msgstr "Изађите из програма"
+
+#: ../lybniz:458
+msgid "_Graph"
+msgstr "Дија_грам"
+
+#: ../lybniz:462
+msgid "P_lot"
+msgstr "_Исцртај"
+
+#: ../lybniz:462
+msgid "Plot Functions"
+msgstr "Нацртајте график функције"
+
+#: ../lybniz:469
+msgid "_Evaluate"
+msgstr "_Процени"
+
+#: ../lybniz:469
+msgid "Evaluate Functions"
+msgstr "Процените функцију"
+
+#: ../lybniz:476
+msgid "Zoom _In"
+msgstr "У_већај"
+
+#: ../lybniz:476
+msgid "Zoom In"
+msgstr "Увећајте приказ"
+
+#: ../lybniz:483
+msgid "Zoom _Out"
+msgstr "У_мањи"
+
+#: ../lybniz:483
+msgid "Zoom Out"
+msgstr "Умањите приказ"
+
+#: ../lybniz:490
+msgid "Zoom _Reset"
+msgstr "Врати _увеличање"
+
+#: ../lybniz:490
+msgid "Zoom Reset"
+msgstr "Вратите увеличање приказа"
+
+#: ../lybniz:497
+msgid "_Connect Points"
+msgstr "_Повежи тачке"
+
+#: ../lybniz:504
+msgid "Scale Style"
+msgstr "Врста размере"
+
+#: ../lybniz:508
+msgid "Decimal"
+msgstr "Децимални"
+
+#: ../lybniz:508
+msgid "Set style to decimal"
+msgstr "За размеру користите децималне бројеве"
+
+#: ../lybniz:514
+msgid "Radians π"
+msgstr ""
+
+#: ../lybniz:514
+msgid "Set style to radians"
+msgstr "За размеру користите углове радијана"
+
+#: ../lybniz:520
+msgid "Radians τ"
+msgstr ""
+
+#: ../lybniz:520
+msgid "Set style to radians using Tau (τ)"
+msgstr ""
+
+#: ../lybniz:526
+msgid "Custom"
+msgstr "Произвољно"
+
+#: ../lybniz:526
+msgid "Set style to custom"
+msgstr "За размеру користите произвољне вредности"
+
+#: ../lybniz:533
+msgid "_Help"
+msgstr "По_моћ"
+
+#: ../lybniz:537
+msgid "_Contents"
+msgstr "_Садржај"
+
+#: ../lybniz:537
+msgid "Help Contents"
+msgstr "Прикажите садржај помоћи програма"
+
+#: ../lybniz:544
+msgid "_About"
+msgstr "_О програму"
+
+#: ../lybniz:544
+msgid "About Box"
+msgstr "Прикажите прозорче са подацима о програму"
+
+#: ../lybniz:608
+msgid "Evaluate"
+msgstr "Процена"
+
+#: ../lybniz:735
+msgid "Save as..."
+msgstr "Сачувајте као..."
+
+#: ../lybniz:790
+msgid "Function Graph Plotter"
+msgstr "Исцртавач графика функција"
+
+#: ../lybniz:858
+msgid "X min"
+msgstr "Најмање X"
+
+#: ../lybniz:863
+msgid "Y min"
+msgstr "Најмање Y"
+
+#: ../lybniz:875
+msgid "X max"
+msgstr "Највеће X"
+
+#: ../lybniz:881
+msgid "Y max"
+msgstr "Највеће Y"
+
+#: ../lybniz:893
+msgid "X scale"
+msgstr "X размера"
+
+#: ../lybniz:898
+msgid "Y scale"
+msgstr "Y размера"
+
+#: ../lybniz.desktop:3
+msgid "Lybniz"
+msgstr "Лајбниц"
+
+#: ../lybniz.desktop:4
+msgid "Lybniz Graph Plotter"
+msgstr "Лајбниц исцртавач графика функција"
+
+#: ../lybniz.desktop:42
+msgid "Plot graphs and functions"
+msgstr "Исцртавајте графике и функције"
+
+#: ../lybniz.desktop:90
+msgid "lybniz"
+msgstr "лајбниц"
