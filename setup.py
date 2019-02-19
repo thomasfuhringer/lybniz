@@ -7,7 +7,7 @@ data_files = [('share/man/man1',['lybniz.1']),('share/applications',['lybniz.des
 
 setup(
 	name = 'lybniz',
-	version = '3.0.2',
+	version = '3.0.4',
 	description = 'Graph Plotter',
 	author = 'Thomas Führinger, Sam Tygier',
 	author_email = 'ThomasFuhringer@Yahoo.com, samtygier@yahoo.co.uk',

@@ -1,4 +1,4 @@
-Current Version 3.0.2
+Current Version 3.0.4
 
 Changes since 3.0.1
 
