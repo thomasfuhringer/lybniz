@@ -4,14 +4,15 @@
 #
 # Translators:
 # AlexL <loginov.alex.valer@gmail.com>, 2019
+# Yuri Chornoivan <yurchor@ukr.net>, 2019
 # Микола Ткач <chistomov@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 09:38+0300\n"
-"PO-Revision-Date: 2019-02-19 05:23+0000\n"
-"Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
+"POT-Creation-Date: 2019-02-20 02:07+0300\n"
+"PO-Revision-Date: 2019-02-19 06:40+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/Magic/lybniz/language/"
 "uk/)\n"
 "Language: uk\n"
@@ -23,175 +24,175 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: ../lybniz:345 ../lybniz:356 ../lybniz:367 ../lybniz:404
+#: ../lybniz.py:345 ../lybniz.py:356 ../lybniz.py:367 ../lybniz.py:404
 msgid "Function"
-msgstr ""
+msgstr "Функція"
 
-#: ../lybniz:345 ../lybniz:356 ../lybniz:367
+#: ../lybniz.py:345 ../lybniz.py:356 ../lybniz.py:367
 msgid "is invalid."
-msgstr ""
+msgstr "є некоректною."
 
-#: ../lybniz:404
+#: ../lybniz.py:404
 msgid "is invalid at"
-msgstr ""
+msgstr "є некоректною у"
 
-#: ../lybniz:439
+#: ../lybniz.py:439
 msgid "_File"
 msgstr "_Файл"
 
-#: ../lybniz:443
+#: ../lybniz.py:443
 msgid "_Save"
 msgstr "_Зберегти"
 
-#: ../lybniz:443
+#: ../lybniz.py:443
 msgid "Save graph as bitmap"
 msgstr "Зберегти графік як растрове зображення"
 
-#: ../lybniz:450
+#: ../lybniz.py:450
 msgid "_Quit"
 msgstr "_Вийти"
 
-#: ../lybniz:450
+#: ../lybniz.py:450
 msgid "Quit Application"
 msgstr "Вийти з проґрами"
 
-#: ../lybniz:458
+#: ../lybniz.py:458
 msgid "_Graph"
 msgstr "_Графік"
 
-#: ../lybniz:462
+#: ../lybniz.py:462
 msgid "P_lot"
 msgstr "_Накреслити"
 
-#: ../lybniz:462
+#: ../lybniz.py:462
 msgid "Plot Functions"
 msgstr "Накреслити функцію"
 
-#: ../lybniz:469
+#: ../lybniz.py:469
 msgid "_Evaluate"
 msgstr "_Обчислити"
 
-#: ../lybniz:469
+#: ../lybniz.py:469
 msgid "Evaluate Functions"
 msgstr "Обчислити функцію"
 
-#: ../lybniz:476
+#: ../lybniz.py:476
 msgid "Zoom _In"
-msgstr "_Наблизити"
+msgstr "З_більшити"
 
-#: ../lybniz:476
+#: ../lybniz.py:476
 msgid "Zoom In"
-msgstr "Наблизити"
+msgstr "Збільшити"
 
-#: ../lybniz:483
+#: ../lybniz.py:483
 msgid "Zoom _Out"
-msgstr "_Віддалити"
+msgstr "З_меншити"
 
-#: ../lybniz:483
+#: ../lybniz.py:483
 msgid "Zoom Out"
-msgstr "Віддалити"
+msgstr "Зменшити"
 
-#: ../lybniz:490
+#: ../lybniz.py:490
 msgid "Zoom _Reset"
 msgstr "_Скинути масштабування"
 
-#: ../lybniz:490
+#: ../lybniz.py:490
 msgid "Zoom Reset"
 msgstr "Скинути масштабування"
 
-#: ../lybniz:497
+#: ../lybniz.py:497
 msgid "_Connect Points"
-msgstr "_Під’єднати точки"
+msgstr "З'_єднати точки"
 
-#: ../lybniz:504
+#: ../lybniz.py:504
 msgid "Scale Style"
 msgstr "Стиль шкали"
 
-#: ../lybniz:508
+#: ../lybniz.py:508
 msgid "Decimal"
 msgstr "Десятковий"
 
-#: ../lybniz:508
+#: ../lybniz.py:508
 msgid "Set style to decimal"
 msgstr "Встановити стиль десятковим"
 
-#: ../lybniz:514
+#: ../lybniz.py:514
 msgid "Radians π"
-msgstr ""
+msgstr "π-радіани"
 
-#: ../lybniz:514
+#: ../lybniz.py:514
 msgid "Set style to radians"
-msgstr "Встановити стиль радіальним"
+msgstr "Встановити стиль у радіанах"
 
-#: ../lybniz:520
+#: ../lybniz.py:520
 msgid "Radians τ"
-msgstr ""
+msgstr "τ-радіани"
 
-#: ../lybniz:520
+#: ../lybniz.py:520
 msgid "Set style to radians using Tau (τ)"
-msgstr ""
+msgstr "Встановити стиль радіанів із тау (τ)"
 
-#: ../lybniz:526
+#: ../lybniz.py:526
 msgid "Custom"
-msgstr "Користувацький"
+msgstr "Нетиповий"
 
-#: ../lybniz:526
+#: ../lybniz.py:526
 msgid "Set style to custom"
-msgstr "Встановити стиль користувацьким"
+msgstr "Встановити нетиповий стиль"
 
-#: ../lybniz:533
+#: ../lybniz.py:533
 msgid "_Help"
-msgstr "_Допомога"
+msgstr "_Довідка"
 
-#: ../lybniz:537
+#: ../lybniz.py:537
 msgid "_Contents"
 msgstr "_Зміст"
 
-#: ../lybniz:537
+#: ../lybniz.py:537
 msgid "Help Contents"
 msgstr "Зміст довідки"
 
-#: ../lybniz:544
+#: ../lybniz.py:544
 msgid "_About"
 msgstr "_Про проґраму"
 
-#: ../lybniz:544
+#: ../lybniz.py:544
 msgid "About Box"
 msgstr "Про поле"
 
-#: ../lybniz:608
+#: ../lybniz.py:608
 msgid "Evaluate"
 msgstr "Обчислити"
 
-#: ../lybniz:735
+#: ../lybniz.py:735
 msgid "Save as..."
 msgstr "Зберегти як..."
 
-#: ../lybniz:790
+#: ../lybniz.py:790
 msgid "Function Graph Plotter"
-msgstr "Графопобудовник функцій"
+msgstr "Програма для побудови графіків функцій"
 
-#: ../lybniz:858
+#: ../lybniz.py:858
 msgid "X min"
 msgstr "X min"
 
-#: ../lybniz:863
+#: ../lybniz.py:863
 msgid "Y min"
 msgstr "Y min"
 
-#: ../lybniz:875
+#: ../lybniz.py:875
 msgid "X max"
 msgstr "X max"
 
-#: ../lybniz:881
+#: ../lybniz.py:881
 msgid "Y max"
 msgstr "Y max"
 
-#: ../lybniz:893
+#: ../lybniz.py:893
 msgid "X scale"
 msgstr "X шкала"
 
-#: ../lybniz:898
+#: ../lybniz.py:898
 msgid "Y scale"
 msgstr "Y шкала"
 
@@ -201,7 +202,7 @@ msgstr "Lybniz"
 
 #: ../lybniz.desktop:4
 msgid "Lybniz Graph Plotter"
-msgstr "Lybniz графопобудовник"
+msgstr "Програма для побудови графіків Lybniz"
 
 #: ../lybniz.desktop:42
 msgid "Plot graphs and functions"
