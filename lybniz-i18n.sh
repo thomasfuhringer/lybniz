@@ -15,7 +15,7 @@ fi
 pushd po
 
 echo "Creating POT file"
-xgettext --language=Python --keyword=_ --keyword=N_ --output=lybniz.pot ../lybniz
+xgettext --language=Python --keyword=_ --keyword=N_ --output=lybniz.pot ../lybniz.py
 xgettext --language=Desktop --output=lybniz.pot ../lybniz.desktop --from-code=utf-8 -j
 echo "Done for creating POT file."
 
