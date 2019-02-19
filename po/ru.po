@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 08:42+0300\n"
+"POT-Creation-Date: 2019-02-19 09:38+0300\n"
 "PO-Revision-Date: 2019-02-19 05:18+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/Magic/lybniz/language/ru/)\n"
@@ -20,175 +20,175 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../lybniz:344 ../lybniz:355 ../lybniz:366 ../lybniz:403
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367 ../lybniz:404
 msgid "Function"
 msgstr "Функция"
 
-#: ../lybniz:344 ../lybniz:355 ../lybniz:366
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367
 msgid "is invalid."
 msgstr "недопустимая."
 
-#: ../lybniz:403
+#: ../lybniz:404
 msgid "is invalid at"
 msgstr "недопустимая в"
 
-#: ../lybniz:438
+#: ../lybniz:439
 msgid "_File"
 msgstr "_Файл"
 
-#: ../lybniz:442
+#: ../lybniz:443
 msgid "_Save"
 msgstr "_Сохранить"
 
-#: ../lybniz:442
+#: ../lybniz:443
 msgid "Save graph as bitmap"
 msgstr "Сохранить график как растровое изображение"
 
-#: ../lybniz:449
+#: ../lybniz:450
 msgid "_Quit"
 msgstr "_Выход"
 
-#: ../lybniz:449
+#: ../lybniz:450
 msgid "Quit Application"
 msgstr "Выход из программы"
 
-#: ../lybniz:457
+#: ../lybniz:458
 msgid "_Graph"
 msgstr "_График"
 
-#: ../lybniz:461
+#: ../lybniz:462
 msgid "P_lot"
 msgstr "_Начертить"
 
-#: ../lybniz:461
+#: ../lybniz:462
 msgid "Plot Functions"
 msgstr "Начертить функцию"
 
-#: ../lybniz:468
+#: ../lybniz:469
 msgid "_Evaluate"
 msgstr "_Вычислить"
 
-#: ../lybniz:468
+#: ../lybniz:469
 msgid "Evaluate Functions"
 msgstr "Вычислить функцию"
 
-#: ../lybniz:475
+#: ../lybniz:476
 msgid "Zoom _In"
 msgstr "_Приблизить"
 
-#: ../lybniz:475
+#: ../lybniz:476
 msgid "Zoom In"
 msgstr "Приблизить"
 
-#: ../lybniz:482
+#: ../lybniz:483
 msgid "Zoom _Out"
 msgstr "_Отдалить"
 
-#: ../lybniz:482
+#: ../lybniz:483
 msgid "Zoom Out"
 msgstr "Отдалить"
 
-#: ../lybniz:489
+#: ../lybniz:490
 msgid "Zoom _Reset"
 msgstr "_Сбросить масштабирование"
 
-#: ../lybniz:489
+#: ../lybniz:490
 msgid "Zoom Reset"
 msgstr "Сбросить масштабирование"
 
-#: ../lybniz:496
+#: ../lybniz:497
 msgid "_Connect Points"
 msgstr "Подключить то_чки"
 
-#: ../lybniz:503
+#: ../lybniz:504
 msgid "Scale Style"
 msgstr "Стиль шкалы"
 
-#: ../lybniz:507
+#: ../lybniz:508
 msgid "Decimal"
 msgstr "Десятичный"
 
-#: ../lybniz:507
+#: ../lybniz:508
 msgid "Set style to decimal"
 msgstr "Установить стиль десятичным"
 
-#: ../lybniz:513
+#: ../lybniz:514
 msgid "Radians π"
 msgstr "Радиальный π"
 
-#: ../lybniz:513
+#: ../lybniz:514
 msgid "Set style to radians"
 msgstr "Установить стиль радиальным"
 
-#: ../lybniz:519
+#: ../lybniz:520
 msgid "Radians τ"
 msgstr "Радиальный τ"
 
-#: ../lybniz:519
+#: ../lybniz:520
 msgid "Set style to radians using Tau (τ)"
 msgstr "Установить стиль радиальным, используя Тау (τ)"
 
-#: ../lybniz:525
+#: ../lybniz:526
 msgid "Custom"
 msgstr "Пользовательский"
 
-#: ../lybniz:525
+#: ../lybniz:526
 msgid "Set style to custom"
 msgstr "Установить стиль пользовательским"
 
-#: ../lybniz:532
+#: ../lybniz:533
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../lybniz:536
+#: ../lybniz:537
 msgid "_Contents"
 msgstr "_Содержание"
 
-#: ../lybniz:536
+#: ../lybniz:537
 msgid "Help Contents"
 msgstr "Содержание справки"
 
-#: ../lybniz:543
+#: ../lybniz:544
 msgid "_About"
 msgstr "_О программе"
 
-#: ../lybniz:543
+#: ../lybniz:544
 msgid "About Box"
 msgstr "О поле"
 
-#: ../lybniz:607
+#: ../lybniz:608
 msgid "Evaluate"
 msgstr "Вычислить"
 
-#: ../lybniz:734
+#: ../lybniz:735
 msgid "Save as..."
 msgstr "Сохранить как..."
 
-#: ../lybniz:783
+#: ../lybniz:790
 msgid "Function Graph Plotter"
 msgstr "Графопостроитель функций"
 
-#: ../lybniz:851
+#: ../lybniz:858
 msgid "X min"
 msgstr "X min"
 
-#: ../lybniz:856
+#: ../lybniz:863
 msgid "Y min"
 msgstr "Y min"
 
-#: ../lybniz:868
+#: ../lybniz:875
 msgid "X max"
 msgstr "X max"
 
-#: ../lybniz:874
+#: ../lybniz:881
 msgid "Y max"
 msgstr "Y max"
 
-#: ../lybniz:886
+#: ../lybniz:893
 msgid "X scale"
 msgstr "Шкала X"
 
-#: ../lybniz:891
+#: ../lybniz:898
 msgid "Y scale"
 msgstr "Шкала Y"
 

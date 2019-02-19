@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 08:42+0300\n"
+"POT-Creation-Date: 2019-02-19 09:38+0300\n"
 "PO-Revision-Date: 2019-02-19 05:23+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/Magic/lybniz/language/sv/)\n"
@@ -19,175 +19,175 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lybniz:344 ../lybniz:355 ../lybniz:366 ../lybniz:403
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367 ../lybniz:404
 msgid "Function"
 msgstr ""
 
-#: ../lybniz:344 ../lybniz:355 ../lybniz:366
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367
 msgid "is invalid."
 msgstr ""
 
-#: ../lybniz:403
+#: ../lybniz:404
 msgid "is invalid at"
 msgstr ""
 
-#: ../lybniz:438
+#: ../lybniz:439
 msgid "_File"
 msgstr "_Fil"
 
-#: ../lybniz:442
+#: ../lybniz:443
 msgid "_Save"
 msgstr "_Spara"
 
-#: ../lybniz:442
+#: ../lybniz:443
 msgid "Save graph as bitmap"
 msgstr "Spara graf som bitmap"
 
-#: ../lybniz:449
+#: ../lybniz:450
 msgid "_Quit"
 msgstr "_Avsluta"
 
-#: ../lybniz:449
+#: ../lybniz:450
 msgid "Quit Application"
 msgstr "Avsluta program"
 
-#: ../lybniz:457
+#: ../lybniz:458
 msgid "_Graph"
 msgstr "_Graf"
 
-#: ../lybniz:461
+#: ../lybniz:462
 msgid "P_lot"
 msgstr "R_ita upp"
 
-#: ../lybniz:461
+#: ../lybniz:462
 msgid "Plot Functions"
 msgstr "Rita upp funktioner"
 
-#: ../lybniz:468
+#: ../lybniz:469
 msgid "_Evaluate"
 msgstr "Utvärd_era"
 
-#: ../lybniz:468
+#: ../lybniz:469
 msgid "Evaluate Functions"
 msgstr "Utvärdera funktioner"
 
-#: ../lybniz:475
+#: ../lybniz:476
 msgid "Zoom _In"
 msgstr "Zooma _in"
 
-#: ../lybniz:475
+#: ../lybniz:476
 msgid "Zoom In"
 msgstr "Zooma in"
 
-#: ../lybniz:482
+#: ../lybniz:483
 msgid "Zoom _Out"
 msgstr "Z_ooma ut"
 
-#: ../lybniz:482
+#: ../lybniz:483
 msgid "Zoom Out"
 msgstr "Zooma ut"
 
-#: ../lybniz:489
+#: ../lybniz:490
 msgid "Zoom _Reset"
 msgstr "Zoom åte_rställ"
 
-#: ../lybniz:489
+#: ../lybniz:490
 msgid "Zoom Reset"
 msgstr "Återställ zoom"
 
-#: ../lybniz:496
+#: ../lybniz:497
 msgid "_Connect Points"
 msgstr "_Koppla ihop punkter"
 
-#: ../lybniz:503
+#: ../lybniz:504
 msgid "Scale Style"
 msgstr "Skalstil"
 
-#: ../lybniz:507
+#: ../lybniz:508
 msgid "Decimal"
 msgstr "Decimal"
 
-#: ../lybniz:507
+#: ../lybniz:508
 msgid "Set style to decimal"
 msgstr "Sätt stil till decimal"
 
-#: ../lybniz:513
+#: ../lybniz:514
 msgid "Radians π"
 msgstr ""
 
-#: ../lybniz:513
+#: ../lybniz:514
 msgid "Set style to radians"
 msgstr "Sätt stil till radianer"
 
-#: ../lybniz:519
+#: ../lybniz:520
 msgid "Radians τ"
 msgstr ""
 
-#: ../lybniz:519
+#: ../lybniz:520
 msgid "Set style to radians using Tau (τ)"
 msgstr ""
 
-#: ../lybniz:525
+#: ../lybniz:526
 msgid "Custom"
 msgstr "Egen"
 
-#: ../lybniz:525
+#: ../lybniz:526
 msgid "Set style to custom"
 msgstr "Sätt stil till egen"
 
-#: ../lybniz:532
+#: ../lybniz:533
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../lybniz:536
+#: ../lybniz:537
 msgid "_Contents"
 msgstr "_Innehåll"
 
-#: ../lybniz:536
+#: ../lybniz:537
 msgid "Help Contents"
 msgstr "Hjälpens innehåll"
 
-#: ../lybniz:543
+#: ../lybniz:544
 msgid "_About"
 msgstr "_Om"
 
-#: ../lybniz:543
+#: ../lybniz:544
 msgid "About Box"
 msgstr "Omruta"
 
-#: ../lybniz:607
+#: ../lybniz:608
 msgid "Evaluate"
 msgstr "Utvärdera"
 
-#: ../lybniz:734
+#: ../lybniz:735
 msgid "Save as..."
 msgstr "Spara som..."
 
-#: ../lybniz:783
+#: ../lybniz:790
 msgid "Function Graph Plotter"
 msgstr "Funktionsgrafritare"
 
-#: ../lybniz:851
+#: ../lybniz:858
 msgid "X min"
 msgstr "X min"
 
-#: ../lybniz:856
+#: ../lybniz:863
 msgid "Y min"
 msgstr "Y min"
 
-#: ../lybniz:868
+#: ../lybniz:875
 msgid "X max"
 msgstr "X max"
 
-#: ../lybniz:874
+#: ../lybniz:881
 msgid "Y max"
 msgstr "Y max"
 
-#: ../lybniz:886
+#: ../lybniz:893
 msgid "X scale"
 msgstr "X-skala"
 
-#: ../lybniz:891
+#: ../lybniz:898
 msgid "Y scale"
 msgstr "Y-skala"
 

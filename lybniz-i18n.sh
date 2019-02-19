@@ -28,7 +28,7 @@ echo "Done for merge translations."
 
 echo "Compiling translations"
 rm -rf ../locale
-for lang in `ls|grep -v \.pot|grep -v lybniz-i18n|cut -d "." --fields=1`
+for lang in `ls|grep -v \.pot|cut -d "." --fields=1`
 do
   echo "     Compiling $lang"
   mkdir -p ../locale/$lang/LC_MESSAGES

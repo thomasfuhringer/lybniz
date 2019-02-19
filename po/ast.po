@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 08:42+0300\n"
+"POT-Creation-Date: 2019-02-19 09:38+0300\n"
 "PO-Revision-Date: 2019-02-19 05:22+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/Magic/lybniz/language/"
@@ -20,175 +20,175 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lybniz:344 ../lybniz:355 ../lybniz:366 ../lybniz:403
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367 ../lybniz:404
 msgid "Function"
 msgstr ""
 
-#: ../lybniz:344 ../lybniz:355 ../lybniz:366
+#: ../lybniz:345 ../lybniz:356 ../lybniz:367
 msgid "is invalid."
 msgstr ""
 
-#: ../lybniz:403
+#: ../lybniz:404
 msgid "is invalid at"
 msgstr ""
 
-#: ../lybniz:438
+#: ../lybniz:439
 msgid "_File"
 msgstr "_Ficheru"
 
-#: ../lybniz:442
+#: ../lybniz:443
 msgid "_Save"
 msgstr "_Guardar"
 
-#: ../lybniz:442
+#: ../lybniz:443
 msgid "Save graph as bitmap"
 msgstr "Guardar la gráfica coma mapa de bits"
 
-#: ../lybniz:449
+#: ../lybniz:450
 msgid "_Quit"
 msgstr "_Colar"
 
-#: ../lybniz:449
+#: ../lybniz:450
 msgid "Quit Application"
 msgstr "Colar de l'aplicación"
 
-#: ../lybniz:457
+#: ../lybniz:458
 msgid "_Graph"
 msgstr "G_ráfica"
 
-#: ../lybniz:461
+#: ../lybniz:462
 msgid "P_lot"
 msgstr "_Trazar"
 
-#: ../lybniz:461
+#: ../lybniz:462
 msgid "Plot Functions"
 msgstr "Funciones de trazáu"
 
-#: ../lybniz:468
+#: ../lybniz:469
 msgid "_Evaluate"
 msgstr "_Evaluar"
 
-#: ../lybniz:468
+#: ../lybniz:469
 msgid "Evaluate Functions"
 msgstr "Evaluar les funciones"
 
-#: ../lybniz:475
+#: ../lybniz:476
 msgid "Zoom _In"
 msgstr "A_verar"
 
-#: ../lybniz:475
+#: ../lybniz:476
 msgid "Zoom In"
 msgstr "Averar"
 
-#: ../lybniz:482
+#: ../lybniz:483
 msgid "Zoom _Out"
 msgstr "All_oñar"
 
-#: ../lybniz:482
+#: ../lybniz:483
 msgid "Zoom Out"
 msgstr "Alloñar"
 
-#: ../lybniz:489
+#: ../lybniz:490
 msgid "Zoom _Reset"
 msgstr "_Reaniciar ampliación"
 
-#: ../lybniz:489
+#: ../lybniz:490
 msgid "Zoom Reset"
 msgstr "Reaniciar ampliación"
 
-#: ../lybniz:496
+#: ../lybniz:497
 msgid "_Connect Points"
 msgstr "_Conectar puntos"
 
-#: ../lybniz:503
+#: ../lybniz:504
 msgid "Scale Style"
 msgstr "Estilu de la escala"
 
-#: ../lybniz:507
+#: ../lybniz:508
 msgid "Decimal"
 msgstr "Decimal"
 
-#: ../lybniz:507
+#: ../lybniz:508
 msgid "Set style to decimal"
 msgstr "Establecer l'estilu a decimal"
 
-#: ../lybniz:513
+#: ../lybniz:514
 msgid "Radians π"
 msgstr ""
 
-#: ../lybniz:513
+#: ../lybniz:514
 msgid "Set style to radians"
 msgstr "Establecer l'estilu a radianes"
 
-#: ../lybniz:519
+#: ../lybniz:520
 msgid "Radians τ"
 msgstr ""
 
-#: ../lybniz:519
+#: ../lybniz:520
 msgid "Set style to radians using Tau (τ)"
 msgstr ""
 
-#: ../lybniz:525
+#: ../lybniz:526
 msgid "Custom"
 msgstr "Personalizáu"
 
-#: ../lybniz:525
+#: ../lybniz:526
 msgid "Set style to custom"
 msgstr "Establecer l'estilu personalizáu"
 
-#: ../lybniz:532
+#: ../lybniz:533
 msgid "_Help"
 msgstr "A_yuda"
 
-#: ../lybniz:536
+#: ../lybniz:537
 msgid "_Contents"
 msgstr "_Conteníu"
 
-#: ../lybniz:536
+#: ../lybniz:537
 msgid "Help Contents"
 msgstr "Conteníu de l'ayuda"
 
-#: ../lybniz:543
+#: ../lybniz:544
 msgid "_About"
 msgstr "_Tocante a"
 
-#: ../lybniz:543
+#: ../lybniz:544
 msgid "About Box"
 msgstr "Tocante a"
 
-#: ../lybniz:607
+#: ../lybniz:608
 msgid "Evaluate"
 msgstr "Evaluar"
 
-#: ../lybniz:734
+#: ../lybniz:735
 msgid "Save as..."
 msgstr "Guardar como..."
 
-#: ../lybniz:783
+#: ../lybniz:790
 msgid "Function Graph Plotter"
 msgstr "Xenerador de gráfiques de función"
 
-#: ../lybniz:851
+#: ../lybniz:858
 msgid "X min"
 msgstr "X min"
 
-#: ../lybniz:856
+#: ../lybniz:863
 msgid "Y min"
 msgstr "Y min"
 
-#: ../lybniz:868
+#: ../lybniz:875
 msgid "X max"
 msgstr "X max"
 
-#: ../lybniz:874
+#: ../lybniz:881
 msgid "Y max"
 msgstr "Y max"
 
-#: ../lybniz:886
+#: ../lybniz:893
 msgid "X scale"
 msgstr "escala X"
 
-#: ../lybniz:891
+#: ../lybniz:898
 msgid "Y scale"
 msgstr "escala Y"
 
