@@ -15,6 +15,7 @@ from math import *
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GObject, Pango, Gio, GdkPixbuf
+from pathlib import Path
 
 app_version = "3.0.4"
 
@@ -768,7 +769,13 @@ def quit_dlg(widget, event=None):
 def show_yelp(widget):
     try:
         import os
-        os.system("yelp doc/lybniz.xml")
+        xml_file = Path("doc/lybniz.xml")
+        if xml_file.is_file():
+             os.system("yelp doc/lybniz.xml")
+        else:
+             xml_file = Path("/usr/share/gnome/help/lybniz/C/lybniz.xml")
+             if xml_file.is_file():
+                 os.system("yelp /usr/share/gnome/help/lybniz/C/lybniz.xml")
         #os.system("yelp /usr/share/gnome/help/lybniz/C/lybniz.xml")
         #Gtk.show_uri(None, "lybniz", 0)
     except:
