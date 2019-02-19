@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# AlexL <loginov.alex.valer@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 07:09+0300\n"
-"PO-Revision-Date: 2019-02-19 03:28+0000\n"
+"POT-Creation-Date: 2019-02-19 08:42+0300\n"
+"PO-Revision-Date: 2019-02-19 05:35+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/Magic/lybniz/language/pl/)\n"
 "Language: pl\n"
@@ -33,7 +34,7 @@ msgstr ""
 
 #: ../lybniz:438
 msgid "_File"
-msgstr ""
+msgstr "_Plik"
 
 #: ../lybniz:442
 msgid "_Save"
@@ -73,19 +74,19 @@ msgstr ""
 
 #: ../lybniz:475
 msgid "Zoom _In"
-msgstr ""
+msgstr "_Powiększ"
 
 #: ../lybniz:475
 msgid "Zoom In"
-msgstr ""
+msgstr "Powiększ"
 
 #: ../lybniz:482
 msgid "Zoom _Out"
-msgstr ""
+msgstr "P_omniejsz"
 
 #: ../lybniz:482
 msgid "Zoom Out"
-msgstr ""
+msgstr "Pomniejsz"
 
 #: ../lybniz:489
 msgid "Zoom _Reset"
@@ -129,11 +130,15 @@ msgstr ""
 
 #: ../lybniz:525
 msgid "Custom"
-msgstr ""
+msgstr "Niestandardowe"
 
 #: ../lybniz:525
 msgid "Set style to custom"
 msgstr ""
+
+#: ../lybniz:532
+msgid "_Help"
+msgstr "Po_moc"
 
 #: ../lybniz:536
 msgid "_Contents"
@@ -157,7 +162,7 @@ msgstr ""
 
 #: ../lybniz:734
 msgid "Save as..."
-msgstr ""
+msgstr "Zapisz jako..."
 
 #: ../lybniz:783
 msgid "Function Graph Plotter"
@@ -189,7 +194,7 @@ msgstr ""
 
 #: ../lybniz.desktop:3
 msgid "Lybniz"
-msgstr ""
+msgstr "Lybniz"
 
 #: ../lybniz.desktop:4
 msgid "Lybniz Graph Plotter"
@@ -201,4 +206,4 @@ msgstr ""
 
 #: ../lybniz.desktop:90
 msgid "lybniz"
-msgstr ""
+msgstr "lybniz"

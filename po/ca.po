@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# AlexL <loginov.alex.valer@gmail.com>, 2019
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 07:09+0300\n"
-"PO-Revision-Date: 2019-02-19 03:28+0000\n"
+"POT-Creation-Date: 2019-02-19 08:42+0300\n"
+"PO-Revision-Date: 2019-02-19 05:27+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/Magic/lybniz/language/ca/)\n"
 "Language: ca\n"
@@ -72,19 +73,19 @@ msgstr ""
 
 #: ../lybniz:475
 msgid "Zoom _In"
-msgstr ""
+msgstr "A_propa"
 
 #: ../lybniz:475
 msgid "Zoom In"
-msgstr ""
+msgstr "Apropa"
 
 #: ../lybniz:482
 msgid "Zoom _Out"
-msgstr ""
+msgstr "_Allunya"
 
 #: ../lybniz:482
 msgid "Zoom Out"
-msgstr ""
+msgstr "Allunya"
 
 #: ../lybniz:489
 msgid "Zoom _Reset"
@@ -133,6 +134,10 @@ msgstr "Personalitzat"
 #: ../lybniz:525
 msgid "Set style to custom"
 msgstr "Estableix l'estil a personalitzat"
+
+#: ../lybniz:532
+msgid "_Help"
+msgstr "_Ajuda"
 
 #: ../lybniz:536
 msgid "_Contents"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 07:09+0300\n"
-"PO-Revision-Date: 2019-02-19 03:50+0000\n"
+"POT-Creation-Date: 2019-02-19 08:42+0300\n"
+"PO-Revision-Date: 2019-02-19 05:32+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/Magic/lybniz/"
 "language/pt_BR/)\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../lybniz:438
 msgid "_File"
-msgstr ""
+msgstr "_Arquivo"
 
 #: ../lybniz:442
 msgid "_Save"
@@ -135,6 +135,10 @@ msgstr ""
 msgid "Set style to custom"
 msgstr ""
 
+#: ../lybniz:532
+msgid "_Help"
+msgstr "_Ajuda"
+
 #: ../lybniz:536
 msgid "_Contents"
 msgstr ""
@@ -145,7 +149,7 @@ msgstr ""
 
 #: ../lybniz:543
 msgid "_About"
-msgstr ""
+msgstr "_Sobre"
 
 #: ../lybniz:543
 msgid "About Box"
@@ -157,7 +161,7 @@ msgstr ""
 
 #: ../lybniz:734
 msgid "Save as..."
-msgstr ""
+msgstr "Salvar como..."
 
 #: ../lybniz:783
 msgid "Function Graph Plotter"
@@ -189,7 +193,7 @@ msgstr ""
 
 #: ../lybniz.desktop:3
 msgid "Lybniz"
-msgstr ""
+msgstr "Lybniz"
 
 #: ../lybniz.desktop:4
 msgid "Lybniz Graph Plotter"
@@ -197,8 +201,8 @@ msgstr "Plotador de Gráficos de Lybniz"
 
 #: ../lybniz.desktop:42
 msgid "Plot graphs and functions"
-msgstr ""
+msgstr "Plote gráficos e funções"
 
 #: ../lybniz.desktop:90
 msgid "lybniz"
-msgstr ""
+msgstr "lybniz"

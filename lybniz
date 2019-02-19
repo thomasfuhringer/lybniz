@@ -529,7 +529,7 @@ def menu_toolbar_create():
     menu_scale_style.append(menu_item_cust)
 
     menu_help = Gtk.Menu()
-    menu_item_help = Gtk.MenuItem(label="_Help", use_underline=True)
+    menu_item_help = Gtk.MenuItem(label=_("_Help"), use_underline=True)
     menu_item_help.set_submenu(menu_help)
     menu_item_help.set_use_underline(True)
 

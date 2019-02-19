@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 07:09+0300\n"
-"PO-Revision-Date: 2019-02-19 03:58+0000\n"
+"POT-Creation-Date: 2019-02-19 08:42+0300\n"
+"PO-Revision-Date: 2019-02-19 05:28+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/Magic/lybniz/language/"
 "pt/)\n"
@@ -136,6 +136,10 @@ msgstr "Personalizado"
 msgid "Set style to custom"
 msgstr "Definir estilo do personalizado"
 
+#: ../lybniz:532
+msgid "_Help"
+msgstr "_Ajuda"
+
 #: ../lybniz:536
 msgid "_Contents"
 msgstr "_Conteúdo"
@@ -190,7 +194,7 @@ msgstr "escala Y"
 
 #: ../lybniz.desktop:3
 msgid "Lybniz"
-msgstr ""
+msgstr "Lybniz"
 
 #: ../lybniz.desktop:4
 msgid "Lybniz Graph Plotter"
@@ -202,4 +206,4 @@ msgstr "Plotar gráficos e funções"
 
 #: ../lybniz.desktop:90
 msgid "lybniz"
-msgstr ""
+msgstr "lybniz"
