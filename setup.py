@@ -14,7 +14,7 @@ setup(
 	contact = 'Thomas Führinger',
 	contact_email = 'ThomasFuhringer@Yahoo.com',
 	url = 'github.com/thomasfuhringer/lybniz',
-	scripts = ['lybniz.py'],
+	scripts = ['lybniz'],
 	data_files = data_files,
 	license = 'BSD',
 	)
