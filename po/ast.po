@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # AlexL <loginov.alex.valer@gmail.com>, 2019
 # Xuacu Saturio <xuacusk8@gmail.com>, 2018
@@ -9,14 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 06:17+0300\n"
+"POT-Creation-Date: 2019-02-19 07:09+0300\n"
 "PO-Revision-Date: 2019-02-19 03:33+0000\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
-"Language-Team: Asturian (http://www.transifex.com/Magic/lybniz/language/ast/)\n"
+"Language-Team: Asturian (http://www.transifex.com/Magic/lybniz/language/"
+"ast/)\n"
+"Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ast\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../lybniz:344 ../lybniz:355 ../lybniz:366 ../lybniz:403
@@ -195,10 +196,10 @@ msgstr "Lybniz"
 msgid "Lybniz Graph Plotter"
 msgstr "Xenerador de gráfiques Lybniz"
 
-#: ../lybniz.desktop:40
+#: ../lybniz.desktop:42
 msgid "Plot graphs and functions"
 msgstr "Dibuxar gráfiques y funciones"
 
-#: ../lybniz.desktop:86
+#: ../lybniz.desktop:90
 msgid "lybniz"
 msgstr "lybniz"

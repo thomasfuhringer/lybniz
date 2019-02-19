@@ -2,8 +2,14 @@
 # -*- coding: UTF-8 -*-
 
 from distutils.core import setup
+from glob import glob
 
 data_files = [('share/man/man1',['lybniz.1']),('share/applications',['lybniz.desktop']),('share/pixmaps',['images/lybniz.png']),('share/gnome/help/lybniz/C',['doc/lybniz.xml']),('share/gnome/help/lybniz/C/figures',['doc/figures/lybniz_colour_graph_small.png'])]
+
+directories = glob('locale/*/*/')
+for directory in directories:
+    files = glob(directory+'*')
+    data_files.append(('share/'+directory, files))
 
 setup(
 	name = 'lybniz',
