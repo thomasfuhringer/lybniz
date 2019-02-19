@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Rivo Zängov <eraser@eraser.ee>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: lybniz\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-19 06:17+0300\n"
+"PO-Revision-Date: 2019-02-19 03:28+0000\n"
+"Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
+"Language-Team: Estonian (http://www.transifex.com/Magic/lybniz/language/et/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../lybniz:344 ../lybniz:355 ../lybniz:366 ../lybniz:403
+msgid "Function"
+msgstr ""
+
+#: ../lybniz:344 ../lybniz:355 ../lybniz:366
+msgid "is invalid."
+msgstr ""
+
+#: ../lybniz:403
+msgid "is invalid at"
+msgstr ""
+
+#: ../lybniz:438
+msgid "_File"
+msgstr "_Fail"
+
+#: ../lybniz:442
+msgid "_Save"
+msgstr "_Salvesta"
+
+#: ../lybniz:442
+msgid "Save graph as bitmap"
+msgstr "Salvesta graafik pildifailina"
+
+#: ../lybniz:449
+msgid "_Quit"
+msgstr "_Välju"
+
+#: ../lybniz:449
+msgid "Quit Application"
+msgstr "Välju rakendusest"
+
+#: ../lybniz:457
+msgid "_Graph"
+msgstr "_Graafik"
+
+#: ../lybniz:461
+msgid "P_lot"
+msgstr ""
+
+#: ../lybniz:461
+msgid "Plot Functions"
+msgstr ""
+
+#: ../lybniz:468
+msgid "_Evaluate"
+msgstr "_Hinda"
+
+#: ../lybniz:468
+msgid "Evaluate Functions"
+msgstr ""
+
+#: ../lybniz:475
+msgid "Zoom _In"
+msgstr ""
+
+#: ../lybniz:475
+msgid "Zoom In"
+msgstr ""
+
+#: ../lybniz:482
+msgid "Zoom _Out"
+msgstr ""
+
+#: ../lybniz:482
+msgid "Zoom Out"
+msgstr ""
+
+#: ../lybniz:489
+msgid "Zoom _Reset"
+msgstr ""
+
+#: ../lybniz:489
+msgid "Zoom Reset"
+msgstr ""
+
+#: ../lybniz:496
+msgid "_Connect Points"
+msgstr ""
+
+#: ../lybniz:503
+msgid "Scale Style"
+msgstr ""
+
+#: ../lybniz:507
+msgid "Decimal"
+msgstr ""
+
+#: ../lybniz:507
+msgid "Set style to decimal"
+msgstr ""
+
+#: ../lybniz:513
+msgid "Radians π"
+msgstr ""
+
+#: ../lybniz:513
+msgid "Set style to radians"
+msgstr ""
+
+#: ../lybniz:519
+msgid "Radians τ"
+msgstr ""
+
+#: ../lybniz:519
+msgid "Set style to radians using Tau (τ)"
+msgstr ""
+
+#: ../lybniz:525
+msgid "Custom"
+msgstr "Kohandatud"
+
+#: ../lybniz:525
+msgid "Set style to custom"
+msgstr ""
+
+#: ../lybniz:536
+msgid "_Contents"
+msgstr "_Sisu"
+
+#: ../lybniz:536
+msgid "Help Contents"
+msgstr "Abiinfo sisu"
+
+#: ../lybniz:543
+msgid "_About"
+msgstr "_Info"
+
+#: ../lybniz:543
+msgid "About Box"
+msgstr ""
+
+#: ../lybniz:607
+msgid "Evaluate"
+msgstr "Hinda"
+
+#: ../lybniz:734
+msgid "Save as..."
+msgstr "Salvesta kui..."
+
+#: ../lybniz:783
+msgid "Function Graph Plotter"
+msgstr ""
+
+#: ../lybniz:851
+msgid "X min"
+msgstr "X min"
+
+#: ../lybniz:856
+msgid "Y min"
+msgstr "Y min"
+
+#: ../lybniz:868
+msgid "X max"
+msgstr "X maks"
+
+#: ../lybniz:874
+msgid "Y max"
+msgstr "Y maks"
+
+#: ../lybniz:886
+msgid "X scale"
+msgstr "X skaala"
+
+#: ../lybniz:891
+msgid "Y scale"
+msgstr "Y skaala"
+
+#: ../lybniz.desktop:3
+msgid "Lybniz"
+msgstr "Lybniz"
+
+#: ../lybniz.desktop:4
+msgid "Lybniz Graph Plotter"
+msgstr ""
+
+#: ../lybniz.desktop:40
+msgid "Plot graphs and functions"
+msgstr ""
+
+#: ../lybniz.desktop:86
+msgid "lybniz"
+msgstr ""

@@ -6,14 +6,16 @@
 echo "Starting script lybniz-i18n.sh"
 
 A=`which xgettext`
-if [ "$A" = "" ]
+if [ -z "$A" ]
 then
   echo "Error: missing xgettext"
   exit 1
 fi
 
+pushd po
+
 echo "Creating POT file"
-xgettext --language=Python --keyword=_ --keyword=N_ --output=lybniz.pot ../lybniz.py
+xgettext --language=Python --keyword=_ --keyword=N_ --output=lybniz.pot ../lybniz
 xgettext --language=Desktop --output=lybniz.pot ../lybniz.desktop --from-code=utf-8 -j
 echo "Done for creating POT file."
 
@@ -35,5 +37,7 @@ do
   echo "     Done for $lang"
 done
 echo "Done for compiling translations."
+
+popd
 
 echo "Script lybniz-i18n.sh was finished."
