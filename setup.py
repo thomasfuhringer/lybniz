@@ -1,8 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
 from distutils.core import setup
 from glob import glob
+import os
+import shutil
+
+shutil.copyfile('lybniz.py', 'lybniz')
 
 data_files = [('share/icons/hicolor/scalable/apps',['images/lybniz.svg']),('share/man/man1',['lybniz.1']),('share/applications',['lybniz.desktop']),('share/pixmaps',['images/lybniz.png']),('share/gnome/help/lybniz/C',['doc/lybniz.xml']),('share/gnome/help/lybniz/C/figures',['doc/figures/lybniz_colour_graph_small.png'])]
 
@@ -25,3 +29,4 @@ setup(
 	license = 'BSD',
 	)
 
+os.remove("lybniz")
