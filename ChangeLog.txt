@@ -1,5 +1,9 @@
 Current Version 3.0.4
 
+Changes since 3.0.3
+
+* Translations, man page
+
 Changes since 3.0.1
 
 * tau
