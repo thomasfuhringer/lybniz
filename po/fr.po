@@ -4,56 +4,56 @@
 # 
 # Translators:
 # AlexL <loginov.alex.valer@gmail.com>, 2019
-# Waldemar Stoczkowski, 2019
+# Doryan R, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: lybniz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-19 09:38+0300\n"
-"PO-Revision-Date: 2019-03-25 18:18+0000\n"
-"Last-Translator: Waldemar Stoczkowski\n"
-"Language-Team: Polish (http://www.transifex.com/Magic/lybniz/language/pl/)\n"
+"PO-Revision-Date: 2019-04-15 03:20+0000\n"
+"Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/Magic/lybniz/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../lybniz:345 ../lybniz:356 ../lybniz:367 ../lybniz:404
 msgid "Function"
-msgstr "Funkcja"
+msgstr "Fonction"
 
 #: ../lybniz:345 ../lybniz:356 ../lybniz:367
 msgid "is invalid."
-msgstr "jest nieprawidłowy."
+msgstr "est invalide."
 
 #: ../lybniz:404
 msgid "is invalid at"
-msgstr "jest nieprawidłowe w"
+msgstr "est invalide à"
 
 #: ../lybniz:439
 msgid "_File"
-msgstr "_Plik"
+msgstr "_Fichier"
 
 #: ../lybniz:443
 msgid "_Save"
-msgstr "_Zapisz"
+msgstr ""
 
 #: ../lybniz:443
 msgid "Save graph as bitmap"
-msgstr "Zapisz wykres jako bitmapę"
+msgstr "Enregistrer le graphique en tant que bitmap"
 
 #: ../lybniz:450
 msgid "_Quit"
-msgstr "Wyjście"
+msgstr "_Quitter"
 
 #: ../lybniz:450
 msgid "Quit Application"
-msgstr "Zamknij aplikację"
+msgstr "Quitter l'application"
 
 #: ../lybniz:458
 msgid "_Graph"
-msgstr "_Wykres"
+msgstr ""
 
 #: ../lybniz:462
 msgid "P_lot"
@@ -61,31 +61,31 @@ msgstr ""
 
 #: ../lybniz:462
 msgid "Plot Functions"
-msgstr "Wykres funkcji"
+msgstr "Fonctions de plot"
 
 #: ../lybniz:469
 msgid "_Evaluate"
-msgstr "_Szacowanie"
+msgstr "_Évaluer"
 
 #: ../lybniz:469
 msgid "Evaluate Functions"
-msgstr "Szacowanie Funkcji"
+msgstr "Évaluer les fonctions"
 
 #: ../lybniz:476
 msgid "Zoom _In"
-msgstr "_Powiększ"
+msgstr ""
 
 #: ../lybniz:476
 msgid "Zoom In"
-msgstr "Powiększ"
+msgstr ""
 
 #: ../lybniz:483
 msgid "Zoom _Out"
-msgstr "P_omniejsz"
+msgstr ""
 
 #: ../lybniz:483
 msgid "Zoom Out"
-msgstr "Pomniejsz"
+msgstr ""
 
 #: ../lybniz:490
 msgid "Zoom _Reset"
@@ -101,23 +101,23 @@ msgstr ""
 
 #: ../lybniz:504
 msgid "Scale Style"
-msgstr "Styl Skali"
+msgstr "Style d'échelle"
 
 #: ../lybniz:508
 msgid "Decimal"
-msgstr "Dziesiętny"
+msgstr "Décimal"
 
 #: ../lybniz:508
 msgid "Set style to decimal"
-msgstr "Ustaw styl na dziesiętny"
+msgstr "Définir le style en décimal"
 
 #: ../lybniz:514
 msgid "Radians π"
-msgstr "Radiany π"
+msgstr ""
 
 #: ../lybniz:514
 msgid "Set style to radians"
-msgstr ""
+msgstr "Définir le style en radians"
 
 #: ../lybniz:520
 msgid "Radians τ"
@@ -125,19 +125,19 @@ msgstr ""
 
 #: ../lybniz:520
 msgid "Set style to radians using Tau (τ)"
-msgstr ""
+msgstr "Définissez le style sur les radians à l'aide de Tau (τ)"
 
 #: ../lybniz:526
 msgid "Custom"
-msgstr "Niestandardowe"
+msgstr "Personnalisée"
 
 #: ../lybniz:526
 msgid "Set style to custom"
-msgstr "Ustaw styl na niestandardowy"
+msgstr "Définir le style sur personnalisée"
 
 #: ../lybniz:533
 msgid "_Help"
-msgstr "Po_moc"
+msgstr "_Aide"
 
 #: ../lybniz:537
 msgid "_Contents"
@@ -145,27 +145,27 @@ msgstr ""
 
 #: ../lybniz:537
 msgid "Help Contents"
-msgstr ""
+msgstr "Sommaire de l'aide"
 
 #: ../lybniz:544
 msgid "_About"
-msgstr "Informacje o"
+msgstr "_À propos"
 
 #: ../lybniz:544
 msgid "About Box"
-msgstr ""
+msgstr "À propos de Box"
 
 #: ../lybniz:608
 msgid "Evaluate"
-msgstr ""
+msgstr "Évaluer"
 
 #: ../lybniz:735
 msgid "Save as..."
-msgstr "Zapisz jako..."
+msgstr "Enregistrer sous..."
 
 #: ../lybniz:790
 msgid "Function Graph Plotter"
-msgstr ""
+msgstr "Traceur de graphique de fonction"
 
 #: ../lybniz:858
 msgid "X min"
@@ -185,11 +185,11 @@ msgstr ""
 
 #: ../lybniz:893
 msgid "X scale"
-msgstr ""
+msgstr "X échelle"
 
 #: ../lybniz:898
 msgid "Y scale"
-msgstr ""
+msgstr "Y échelle"
 
 #: ../lybniz.desktop:3
 msgid "Lybniz"
@@ -197,11 +197,11 @@ msgstr "Lybniz"
 
 #: ../lybniz.desktop:4
 msgid "Lybniz Graph Plotter"
-msgstr ""
+msgstr "Lybniz Graph Traceur"
 
 #: ../lybniz.desktop:42
 msgid "Plot graphs and functions"
-msgstr "Rysuj wykresy i funkcje"
+msgstr "Graphes de tracé et fonctions"
 
 #: ../lybniz.desktop:90
 msgid "lybniz"
