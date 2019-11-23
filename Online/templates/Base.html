@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- Thomas Führinger, 2019 -->
+    
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lybniz Online</title>
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='Lybniz.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Main.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="Header">
+        <a class="LinkSource" href="{{ url_for('home') }}"><span class="HeaderTitle">Lybniz</span> <span class="HeaderOnline">Online</span></a>
+        <p class="SubTitle">Function graph plotter in Python notation <span class="About"><a class="About" href="{{ url_for('about') }}">About</a></span></p>
+    </div>
+
+    {% for message in get_flashed_messages() %}
+    	<div class="Flash">{{ message }}</div>
+    {% endfor %} {% block body %}{% endblock %}
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    window.onerror = function(msg, url, linenumber) {
+        alert('Error message: ' + msg + '\nURL: ' + url + '\nLine Number: ' + linenumber);
+        return true;
+    }
+</script>
+

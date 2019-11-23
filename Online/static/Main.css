@@ -1,0 +1,205 @@
+ body {
+     font-family: Verdana, Helvetica, Arial, sans-serif;
+     font-size: 10pt;
+     height: 100%;
+     min-height: 100%;
+     background: #FAFAFA;
+}
+ @media only screen and (min-width: 600px) {
+     body {
+         margin: 10 ;
+         min-width: 80px;
+         max-width: 800px;
+         padding: 0.8em;
+         margin: 0 auto;
+    }
+}
+ @media only screen and (max-width: 599px) {
+     body {
+         width: 100%;
+         margin: 0;
+         padding-top: 0.5em;
+    }
+     .Header, .ParameterGrid {
+         padding-left: 0.8em;
+         padding-right: 0.8em;
+    }
+}
+ a:link, a:visited, a:active {
+     text-decoration: none;
+     display: inline-block;
+     color: grey;
+}
+ a:hover {
+     color: black;
+}
+ .HeaderTitle {
+     font-size: 18pt;
+     color: green;
+     margin: 0;
+     font-weight: bold;
+}
+ .HeaderOnline {
+     font-size: 11pt;
+     color: grey;
+     margin: 0;
+     font-style: italic;
+     text-transform: uppercase;
+}
+ .About {
+     font-size: 10pt;
+     color: grey;
+     margin: 0;
+     float: right;
+     text-transform: uppercase;
+     font-style: bold;
+}
+ .SubTitle {
+     font-size: 10pt;
+     color: grey;
+     margin-top: 3px;
+     margin-bottom: 10px;
+}
+ .Graph {
+     width: 100%;
+     border-radius: 3px;
+}
+ .ParameterGrid {
+     display: grid;
+     display: -ms-grid;
+     grid-gap: 4px;
+     -ms-grid-gap: 4px;
+     grid-template-columns: 33px auto 45px 70px 45px 70px;
+     -ms-grid-columns: 33px auto 45px 70px 45px 70px;
+     padding-top: 10px;
+}
+ .FunctionLabel {
+     color: #111;
+     font-size: 100%;
+     margin-left: 0;
+     margin-top: auto;
+     margin-bottom: auto;
+     margin-right: auto;
+}
+ .FunctionInput {
+     background-color: #FFFFFF;
+     border-radius: 3px;
+     padding: 3px;
+}
+ .ParameterLabel {
+     color: #111;
+     font-size: 100%;
+     margin-left: auto;
+     margin-top: auto;
+     margin-bottom: auto;
+     margin-right: 0;
+}
+ .ParameterInput {
+     background-color: #FFFFFF;
+     border-radius: 3px;
+     padding: 2px;
+     text-align: right;
+}
+ .y1Label {
+     grid-area: 1 / 1 / 1 / 1;
+     -ms-grid-row: 1;
+     -ms-grid-column: 1;
+}
+ .y1Input {
+     grid-area: 1 / 2 / 1 / 2;
+     -ms-grid-row: 1;
+     -ms-grid-column: 2;
+}
+ .xMinLabel {
+     grid-area: 1 / 3 / 1 / 3;
+     -ms-grid-row: 1;
+     -ms-grid-column: 3;
+}
+ .xMinInput {
+     grid-area: 1 / 4 / 1 / 4;
+     -ms-grid-row: 1;
+     -ms-grid-column: 4;
+}
+ .xMaxLabel {
+     grid-area: 1 / 5 / 1 / 5;
+     -ms-grid-row: 1;
+     -ms-grid-column: 5;
+}
+ .xMaxInput {
+     grid-area: 1 / 6 / 1 / 6;
+     -ms-grid-row: 1;
+     -ms-grid-column: 6;
+}
+ .y2Label {
+     grid-area: 2 / 1 / 2 / 1;
+     -ms-grid-row: 2;
+     -ms-grid-column: 1;
+}
+ .y2Input {
+     grid-area: 2 / 2 / 2 / 2;
+     -ms-grid-row: 2;
+     -ms-grid-column: 2;
+}
+ .yMinLabel {
+     grid-area: 2 / 3 / 2 / 3;
+     -ms-grid-row: 2;
+     -ms-grid-column: 3;
+}
+ .yMinInput {
+     grid-area: 2 / 4 / 2 / 4;
+     -ms-grid-row: 2;
+     -ms-grid-column: 4;
+}
+ .yMaxLabel {
+     grid-area: 2 / 5 / 2 / 5;
+     -ms-grid-row: 2;
+     -ms-grid-column: 5;
+}
+ .yMaxInput {
+     grid-area: 2 / 6 / 2 / 6;
+     -ms-grid-row: 2;
+     -ms-grid-column: 6;
+}
+ .y3Label {
+     grid-area: 3 / 1 / 3 / 1;
+     -ms-grid-row: 3;
+     -ms-grid-column: 1;
+}
+ .y3Input {
+     grid-area: 3 / 2 / 3 / 2;
+     -ms-grid-row: 3;
+     -ms-grid-column: 2;
+}
+ .UnitsSelect {
+     grid-area: 3 / 3 / 3 / span 2;
+     -ms-grid-row: 3;
+     -ms-grid-column: 3;
+     -ms-grid-column-span:2;
+     width: 110px;
+     margin-left: auto;
+     margin-right: 0;
+     background-color: #EEEEEE;
+     border-radius: 3px;
+     padding: 3px;
+}
+ .Button {
+     grid-area: 3 / 6 / 3 / 6;
+     -ms-grid-row: 3;
+     -ms-grid-column: 6;
+     width: 70px;
+     margin-left: auto;
+     margin-right: 0;
+     background-color: #EEEEEE;
+     border-radius: 3px;
+     padding: 3px;
+}
+ .Flash {
+     background: #CEE5F5;
+     padding: 0.5em;
+     border: 1px solid #AACBE2;
+}
+ .Error {
+     background: #F0D6D6;
+     padding: 0.5em;
+}
+ 

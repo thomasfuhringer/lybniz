@@ -1,0 +1,36 @@
+{% extends "Base.html" %}
+
+{% block body %}
+<div id="ImgContainer" style="position: relative;">
+    <img class="Graph" id="Graph" src={{ url_for( 'static', filename="Placeholder.png" ) }} alt="Graph" style="position: absolute; z-index: 1;" />
+    <canvas id="RectCanvas" width="800" height="450" style="position: relative; z-index: 20;" />
+</div>
+<div class="ParameterGrid">
+    <div class="FunctionLabel y1Label"><font color="blue">y1</font> =</div>
+    <input class="FunctionInput y1Input" type="text" id="y1Input" value="{{ y1 }}">
+    <div class="ParameterLabel xMinLabel">X Min</div>
+    <input class="ParameterInput xMinInput" type="text" id="xMinInput" value="{{ x_min }}">
+    <div class="ParameterLabel xMaxLabel">X Max</div>
+    <input class="ParameterInput xMaxInput" type="text" id="xMaxInput" value="{{ x_max }}">
+    <div class="FunctionLabel y2Label"><font color="green">y2</font> =</div>
+    <input class="FunctionInput y2Input" type="text" id="y2Input" value="{{ y2 }}">
+    <div class="ParameterLabel yMinLabel">Y Min</div>
+    <input class="ParameterInput yMinInput" type="text" id="yMinInput" value="{{ y_min }}">
+    <div class="ParameterLabel yMaxLabel">Y Max</div>
+    <input class="ParameterInput yMaxInput" type="text" id="yMaxInput" value="{{ y_max }}">
+    <div class="FunctionLabel y3Label"><font color="red">y3</font> =</div>
+    <input class="FunctionInput y3Input" type="text" id="y3Input" value="{{ y3 }}">
+
+    <select class="FunctionInput UnitsSelect" id="Units" onchange="plot()">
+        <option value="deg">Degrees °</option>
+        <option value="pi" {% if units=="pi" %}selected{% endif %}>Radians π</option>
+        <option value="tau" {% if units=="tau" %}selected{% endif %}>Radians τ</option>
+    </select>
+
+    <input class="Button" type="button" id="PlotButton" onclick="plot()" value="Plot" />
+</div>
+
+<script src={{ url_for( 'static', filename="Main.js" ) }}></script>
+
+
+{% endblock %}

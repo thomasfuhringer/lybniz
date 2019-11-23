@@ -3,12 +3,12 @@
 
 """
     Simple Function Graph Plotter
-    © Thomas Führinger, Sam Tygier 2005-2018
+    © Thomas Führinger, Sam Tygier 2005-2019
     https://github.com/thomasfuhringer/lybniz
-    Version 3.0.4
+    Version 3.0.5
     Requires PyGObject 3
     Released under the terms of the revised BSD license
-    Modified: 2018-08-16
+    Modified: 2019-11-21
 """
 import sys, os, cairo, gettext, configparser
 from math import *
@@ -17,7 +17,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GObject, Pango, Gio, GdkPixbuf
 from pathlib import Path
 
-app_version = "3.0.4"
+app_version = "3.0.5"
 
 gettext.install("lybniz")
 
@@ -377,7 +377,7 @@ class GraphClass:
 
         cr.set_line_width (0.6)
         if len(plots) != 0:
-            for i in range(0, self.canvas_width, x_res):
+            for i in range(-1, self.canvas_width, x_res):
                 x = self.graph_x(i + 1)
                 for e in plots:
                     safe_dict['x']=x
@@ -385,18 +385,14 @@ class GraphClass:
                         y = eval(e[0],{"__builtins__":{}},safe_dict)
                         y_c = int(round(self.canvas_y(y)))
 
-                        if y_c < 0 or y_c > self.canvas_height:
-                            self.prev_y[e[1]] = None
+                        cr.set_source_rgb(*e[2])
+                        if connect_points and self.prev_y[e[1]] is not None and not ((self.prev_y[e[1]] < 0 and y_c > self.canvas_height) or (y_c < 0 and self.prev_y[e[1]] > self.canvas_height)):
+                            cr.move_to(i, self.prev_y[e[1]])
+                            cr.line_to(i + x_res, y_c)
+                            cr.stroke()
                         else:
-
-                            cr.set_source_rgb(*e[2])
-                            if connect_points and self.prev_y[e[1]] is not None:
-                                cr.move_to(i, self.prev_y[e[1]])
-                                cr.line_to(i + x_res, y_c)
-                                cr.stroke()
-                            else:
-                                cr.rectangle(i + x_res, y_c, 1, 1)
-                                cr.fill()
+                            cr.rectangle(i + x_res, y_c, 1, 1)
+                            cr.fill()
 
                         self.prev_y[e[1]] = y_c
                     except:
