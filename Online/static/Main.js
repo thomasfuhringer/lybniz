@@ -1,5 +1,4 @@
 // Thomas Führinger, 2019
-
 function plot() {
     var message, messageJSON, xmlhttp, response_message;
     var img = document.getElementById("Graph");
@@ -120,6 +119,52 @@ if (canvas.getContext) {
     canvas.addEventListener("mousewheel", mouseWheelHandler, false);
     // Firefox
     canvas.addEventListener("DOMMouseScroll", mouseWheelHandler, false);
+
+
+    // Set up touch events for mobile, etc
+    canvas.addEventListener("touchstart", function(e) {
+        touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousedown", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    
+    canvas.addEventListener("touchend", function(e) {
+        var mouseEvent = new MouseEvent("mouseup", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    
+    canvas.addEventListener("touchmove", function(e) {
+        touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+
+    // Prevent scrolling when touching the canvas
+    document.body.addEventListener("touchstart", function(e) {
+        if (e.target == canvas) {
+            e.preventDefault();
+        }
+    }, false);
+    document.body.addEventListener("touchend", function(e) {
+        if (e.target == canvas) {
+            e.preventDefault();
+        }
+    }, false);
+    document.body.addEventListener("touchmove", function(e) {
+        if (e.target == canvas) {
+            e.preventDefault();
+        }
+    }, false);
+
 }
 
 function keyPressedHandler(event) {
@@ -157,7 +202,7 @@ function mouseEvent(res, e) {
             //ctx.closePath();
         }
     }
-    if (res == "up") { // || res == "out") {
+    if ((res == "up" || res == "out") && dragging) {
         dragging = false;
         var xMin = parseFloat(document.getElementById("xMinInput").value);
         var yMin = parseFloat(document.getElementById("yMinInput").value);
