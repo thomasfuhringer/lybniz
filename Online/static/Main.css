@@ -182,14 +182,23 @@
      border-radius: 3px;
      padding: 3px;
 }
- .Button {
+ #ZoomOutButton {
+     grid-area: 3 / 5 / 3 / 5;
+     -ms-grid-row: 3;
+     -ms-grid-column: 5;
+     width: 34px;
+     margin: auto;
+     background-color: #eeeeee;
+     border-radius: 3px;
+}
+ #PlotButton {
      grid-area: 3 / 6 / 3 / 6;
      -ms-grid-row: 3;
      -ms-grid-column: 6;
      width: 70px;
      margin-left: auto;
      margin-right: 0;
-     background-color: #EEEEEE;
+     background-color: #eeeeee;
      border-radius: 3px;
      padding: 3px;
 }

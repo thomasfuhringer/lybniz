@@ -214,13 +214,20 @@ function mouseEvent(res, e) {
         var yMinNew = yMax - (Math.max(startY, e.clientY - offsetTop) * (yMax - yMin) / h);
         var yMaxNew = yMax - (Math.min(startY, e.clientY - offsetTop) * (yMax - yMin) / h);
 
-        document.getElementById("xMinInput").value = xMaxNew - xMinNew > 1 ? Math.round(xMinNew * 100) / 100 : xMinNew;
-        document.getElementById("xMaxInput").value = xMaxNew - xMinNew > 1 ? Math.round(xMaxNew * 100) / 100 : xMaxNew;
-        document.getElementById("yMinInput").value = yMaxNew - yMinNew > 1 ? Math.round(yMinNew * 100) / 100 : yMinNew;
-        document.getElementById("yMaxInput").value = yMaxNew - yMinNew > 1 ? Math.round(yMaxNew * 100) / 100 : yMaxNew;
+        xMin = xMaxNew - xMinNew > 1 ? Math.round(xMinNew * 100) / 100 : xMinNew;
+        xMax = xMaxNew - xMinNew > 1 ? Math.round(xMaxNew * 100) / 100 : xMaxNew;
+        yMin = yMaxNew - yMinNew > 1 ? Math.round(yMinNew * 100) / 100 : yMinNew;
+        yMax = yMaxNew - yMinNew > 1 ? Math.round(yMaxNew * 100) / 100 : yMaxNew;
+            
+        if (xMin != xMax && yMin != yMax) {
+            document.getElementById("xMinInput").value = xMin;
+            document.getElementById("xMaxInput").value = xMax;
+            document.getElementById("yMinInput").value = yMin;
+            document.getElementById("yMaxInput").value = yMax;
 
-        ctx.clearRect(0, 0, w, h);
-        plot();
+            ctx.clearRect(0, 0, w, h);
+            plot();
+        }
     }
 }
 

@@ -26,7 +26,8 @@
         <option value="pi" {% if units=="pi" %}selected{% endif %}>Radians π</option>
         <option value="tau" {% if units=="tau" %}selected{% endif %}>Radians τ</option>
     </select>
-
+ 
+    <button class="Button" id="ZoomOutButton" onclick="zoom(-1)" title="Zoom Out"><img src={{ url_for( "static", filename="ZoomOut.svg" ) }} alt="Z-"></button>
     <input class="Button" type="button" id="PlotButton" onclick="plot()" value="Plot" />
 </div>
 
