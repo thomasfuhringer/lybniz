@@ -4,7 +4,7 @@
     Thomas Führinger 2019
     https://github.com/thomasfuhringer/lybniz
     Released under the terms of the revised BSD license
-    Modified: 2019-11-19
+    Modified: 2020-02-03
 
     uwsgi --http-socket 127.0.0.1:3031 --plugin python3 --wsgi-file Main.py --callable app  --buffer-size=32768
 """
@@ -236,7 +236,7 @@ def sub_dict(somedict, somekeys, default=None):
     return dict([ (k, somedict.get(k, default)) for k in somekeys ])
 
 # a list of the functions from math that we want.
-safe_list = ["math", "acos", "asin", "atan", "atan2", "ceil", "cos", "cosh", "degrees", "e", "exp", "fabs", "floor", "fmod", "frexp", "hypot", "ldexp", "log", "log10", "modf", "pi", "tau", "pow", "radians", "sin", "sinh", "sqrt", "tan", "tanh","fac","sinc"]
+safe_list = ["math", "acos", "asin", "asinh", "atan", "atanh", "ceil", "cos", "cosh", "degrees", "e", "erf", "erfc", "exp", "expm1", "fabs", "floor", "fmod", "frexp", "hypot", "ldexp", "log", "log2", "log1p", "log10", "modf", "pi", "tau", "pow", "radians", "sin", "sinh", "sqrt", "tan", "tanh"]
 safe_dict = sub_dict(locals(), safe_list)
 
 #add any needed builtins back in.

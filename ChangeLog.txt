@@ -1,4 +1,12 @@
-Current Version 3.0.4
+Current Version 3.0.5
+
+Changes since 3.0.5
+
+* Enabled erf() and a few other functions
+
+Changes since 3.0.4
+
+* Fix bug regarding overshoot of x display boundaries
 
 Changes since 3.0.3
 

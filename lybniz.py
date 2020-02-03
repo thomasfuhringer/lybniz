@@ -3,12 +3,12 @@
 
 """
     Simple Function Graph Plotter
-    © Thomas Führinger, Sam Tygier 2005-2019
+    © Thomas Führinger, Sam Tygier 2005-2020
     https://github.com/thomasfuhringer/lybniz
-    Version 3.0.5
+    Version 3.0.6
     Requires PyGObject 3
     Released under the terms of the revised BSD license
-    Modified: 2019-11-21
+    Modified: 2020-02-03
 """
 import sys, os, cairo, gettext, configparser
 from math import *
@@ -17,7 +17,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GObject, Pango, Gio, GdkPixbuf
 from pathlib import Path
 
-app_version = "3.0.5"
+app_version = "3.0.6"
 
 gettext.install("lybniz")
 
@@ -66,7 +66,7 @@ def sinc(x):
 def sub_dict(somedict, somekeys, default=None):
     return dict([ (k, somedict.get(k, default)) for k in somekeys ])
 # a list of the functions from math that we want.
-safe_list = ['math', 'acos', 'asin', 'atan', 'atan2', 'ceil', 'cos', 'cosh', 'degrees', 'e', 'exp', 'fabs', 'floor', 'fmod', 'frexp', 'hypot', 'ldexp', 'log', 'log10', 'modf', 'pi', 'tau', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh','fac','sinc']
+safe_list = ['math', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atanh', 'ceil', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'floor', 'fmod', 'frexp', 'gamma', 'lgamma', 'hypot', 'ldexp', 'log', 'log2', 'log1p', 'log10', 'modf', 'pi', 'tau', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'factorial']
 safe_dict = sub_dict(locals(), safe_list)
 
 #add any needed builtins back in.
