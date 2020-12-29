@@ -1,6 +1,6 @@
 # Lybniz for Windows
 
-Based on the Python library Timber
+Based on the Python library [Tymber](https://github.com/thomasfuhringer/tymber)
 
 ![](Screenshot.png)
 
